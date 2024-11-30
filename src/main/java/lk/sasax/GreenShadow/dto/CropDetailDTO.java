@@ -8,10 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CropDetailDTO {
-    private String logCode;
-    private String cropCode;
-    private String staffId;
-    private int quantity;
-    private int membersInStaff;
+    private String logCode;      // The logCode that maps to MonitoringLogService
+    private String cropCode;     // The code for the crop
+    private String staffId;// The ID of the staff
+    private int quantity;        // Quantity of the crop
+    private int membersInStaff;  // Number of staff members working with the crop
 
 }

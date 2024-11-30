@@ -16,7 +16,7 @@ public class VechielDTO {
     private VTypes vehicleCategory;
     private Fuel fuelType;
     private Status status;
-    private String allocatedStaffId;
+    private String allocatedStaffId; // Only including staff ID, or could include other details as needed
     private String remarks;
 
 }

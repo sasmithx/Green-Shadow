@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface VechicleRepository extends JpaRepository<Vehicle,String> {
 
-    Staff findByVehicleCode(String staffId); // Assuming staffId is a String
-
+    Staff findByVehicleCode(String staffId);
 
     Boolean existsByVehicleCode(String id);
     void deleteByVehicleCode(String id);

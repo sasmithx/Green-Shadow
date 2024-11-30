@@ -28,4 +28,8 @@ public class Vehicle {
     private Staff allocatedStaff;
 
     private String remarks;
+
+
+
+
 }

@@ -1,5 +1,5 @@
 package lk.sasax.GreenShadow.util.Enum;
 
 public enum Status {
-    AVAILABLE,UNAVAILABLE
+    AVAILABLE,NOT
 }

@@ -6,7 +6,6 @@ import lk.sasax.GreenShadow.util.Enum.CropComnName;
 import lk.sasax.GreenShadow.util.Enum.CropScienceName;
 import lk.sasax.GreenShadow.util.Enum.CropSesasons;
 import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 

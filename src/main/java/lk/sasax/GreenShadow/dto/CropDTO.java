@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor
 @Data
 public class CropDTO {
-    private String cropCode;
+    private String cropCode;  // Corresponds to the @Id field in Crop entity
     private String cropCommonName;
     private String cropScientificName;
     private MultipartFile cropImage;

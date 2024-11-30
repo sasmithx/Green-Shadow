@@ -17,6 +17,6 @@ public class FieldDTO {
     private String cropCode;
     private String nameOfCrop;
     private String staffId;
-    private String fieldImage1;
+    private String fieldImage1;  // File upload for fieldImage1
 
 }

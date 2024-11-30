@@ -1,6 +1,5 @@
 package lk.sasax.GreenShadow.entity;
 
-
 import jakarta.persistence.*;
 import lk.sasax.GreenShadow.util.Enum.Locations;
 import lombok.Data;
@@ -27,7 +26,7 @@ public class Field {
     private String nameOfCrop;
 
     @ManyToOne
-    @JoinColumn(name = "staff_id" )
+    @JoinColumn(name = "staff_id" )// This will not create a separate table
     private Staff staff;
 
 

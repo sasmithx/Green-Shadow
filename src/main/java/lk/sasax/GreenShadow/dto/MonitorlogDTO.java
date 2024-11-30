@@ -12,8 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class MonitorlogDTO {
-    @Null(message = "ID is auto increment")
+    @Null(message = "ID is auto generated")
     private String logCode;
+//    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate logDate;
     private String logDetails;
     private String role;
