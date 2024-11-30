@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v2/staff")
+@RequestMapping("api/v1/staff")
 @CrossOrigin
 public class StaffController {
 

@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping( "api/v2/vehicles")
+@RequestMapping( "api/v1/vehicles")
 @CrossOrigin("*")
 public class VehicleController {
 

@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("api/v2/field")
+@RequestMapping("api/v1/field")
 @CrossOrigin
 public class FieldController {
 

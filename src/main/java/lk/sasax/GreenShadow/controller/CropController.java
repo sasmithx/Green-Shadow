@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("api/v2/crop")
+@RequestMapping("api/v1/crop")
 //@RequiredArgsConstructor
 @CrossOrigin
 public class CropController {

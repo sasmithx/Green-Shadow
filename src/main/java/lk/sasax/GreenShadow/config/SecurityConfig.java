@@ -36,48 +36,48 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(request -> request
                         // Public endpoints - everyone can access authentication and public endpoints
-                        .requestMatchers("/api/v2/auth/**", "/public/**").permitAll()
+                        .requestMatchers("/api/v1/auth/**", "/public/**").permitAll()
 
                         // Full access for only MANAGER to CRUD all resources (including crops)
-                        .requestMatchers( "/api/v2/manage/**","/api/v2/log/**").hasAnyAuthority("MANAGER")
-                        .requestMatchers("/api/v2/email/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER" ,"SCIENTIST")
+                        .requestMatchers( "/api/v1/manage/**","/api/v1/log/**").hasAnyAuthority("MANAGER")
+                        .requestMatchers("/api/v1/email/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER" ,"SCIENTIST")
 //                        .requestMatchers("/api/v2/staff/**",  "/api/v2/field/**").hasAnyAuthority("MANAGER", "ADMINISTRATIVE")
 
                         // ADMINISTRATIVE users can only GET /api/v2/crop/** (view crop data)
-                        .requestMatchers(HttpMethod.GET, "/api/v2/crop/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/crop/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
 
                         // Restrict SCIENTIST AND MANAGER users from performing POST, PUT, DELETE on /api/v2/crop/** (they can only view with GET)
-                        .requestMatchers(HttpMethod.POST, "/api/v2/crop/**").hasAnyAuthority("MANAGER","SCIENTIST")
-                        .requestMatchers(HttpMethod.PUT, "/api/v2/crop/**").hasAnyAuthority("MANAGER","SCIENTIST")
-                        .requestMatchers(HttpMethod.DELETE, "/api/v2/crop/**").hasAnyAuthority("MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.POST, "/api/v1/crop/**").hasAnyAuthority("MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/crop/**").hasAnyAuthority("MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/crop/**").hasAnyAuthority("MANAGER","SCIENTIST")
                         // ADMINISTRATIVE users can only GET /api/v2/crop/** (view crop data)
 
 
-                        .requestMatchers(HttpMethod.GET, "/api/v2/field/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/field/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
                         // Restrict SCIENTIST AND MANGER users from performing POST, PUT, DELETE on /api/v2/crop/** (they can only view with GET)
-                        .requestMatchers(HttpMethod.POST, "/api/v2/field/**").hasAnyAuthority("MANAGER","SCIENTIST")
-                        .requestMatchers(HttpMethod.PUT, "/api/v2/field/**").hasAnyAuthority("MANAGER","SCIENTIST")
-                        .requestMatchers(HttpMethod.DELETE, "/api/v2/field/**").hasAnyAuthority("MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.POST, "/api/v1/field/**").hasAnyAuthority("MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/field/**").hasAnyAuthority("MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/field/**").hasAnyAuthority("MANAGER","SCIENTIST")
 
 
-                        .requestMatchers(HttpMethod.GET, "/api/v2/vehicles/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/vehicles/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
                         // Restrict ADMINISTRATIVE AND MANAGER  from performing POST, PUT, DELETE on /api/v2/crop/** (they can only view with GET)
-                        .requestMatchers(HttpMethod.POST, "/api/v2/vehicles/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
-                        .requestMatchers(HttpMethod.PUT, "/api/v2/vehicles/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
-                        .requestMatchers(HttpMethod.DELETE, "/api/v2/vehicles/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.POST, "/api/v1/vehicles/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/vehicles/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/vehicles/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
 
-                        .requestMatchers(HttpMethod.GET, "/api/v2/staff/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/staff/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
                         // Restrict ADMINISTRATIVE AND MANAGER  from performing POST, PUT, DELETE on /api/v2/crop/** (they can only view with GET)
-                        .requestMatchers(HttpMethod.POST, "/api/v2/staff/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
-                        .requestMatchers(HttpMethod.PUT, "/api/v2/staff/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
-                        .requestMatchers(HttpMethod.DELETE, "/api/v2/staff/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.POST, "/api/v1/staff/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/staff/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/staff/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
 
 
-                        .requestMatchers(HttpMethod.GET, "/api/v2/equipment/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/equipment/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
                         // Restrict ADMINISTRATIVE AND MANAGER  from performing POST, PUT, DELETE on /api/v2/crop/** (they can only view with GET)
-                        .requestMatchers(HttpMethod.POST, "/api/v2/equipment/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
-                        .requestMatchers(HttpMethod.PUT, "/api/v2/equipment/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
-                        .requestMatchers(HttpMethod.DELETE, "/api/v2/equipment/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.POST, "/api/v1/equipment/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/equipment/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/equipment/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
 
 
 
