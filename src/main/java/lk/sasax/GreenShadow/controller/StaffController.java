@@ -38,21 +38,21 @@ public class StaffController {
         } catch (Exception e) {
             logger.error("saveStaff error", e);
             return new ResponseEntity<>(null, HttpStatus.CONFLICT);
-            }
         }
+    }
 
 
-        @PutMapping("/update")
-        public ResponseEntity<StaffDTO> updateStaff(@RequestBody StaffDTO staffDTO) {
-            try {
-                staffServiceIMPL.updateStaff(staffDTO);
-                logger.info("updateStaff successfully");
-                return new ResponseEntity<>(staffDTO, HttpStatus.OK);
-            } catch (NotFoundException e) {
-                logger.error("updateStaff error", e);
-                return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-            }
+    @PutMapping("/update")
+    public ResponseEntity<StaffDTO> updateStaff(@RequestBody StaffDTO staffDTO) {
+        try {
+            staffServiceIMPL.updateStaff(staffDTO);
+            logger.info("updateStaff successfully");
+            return new ResponseEntity<>(staffDTO, HttpStatus.OK);
+        } catch (NotFoundException e) {
+            logger.error("updateStaff error", e);
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
+    }
 
 
     @DeleteMapping

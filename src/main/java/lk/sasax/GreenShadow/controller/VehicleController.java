@@ -60,7 +60,7 @@ public class VehicleController {
     @DeleteMapping
     public  ResponseUtil deleteVehicle(@RequestParam("vCode") String vCode){
         vechielServiceIMPL.deleteVehicle(vCode);
-        logger.info("delete Vehicle sucessfully");
+        logger.info("delete Vehicle successfully");
         return new ResponseUtil(200,"Deleted",null);
 
     }

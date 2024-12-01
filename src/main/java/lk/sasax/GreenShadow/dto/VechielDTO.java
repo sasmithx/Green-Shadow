@@ -18,5 +18,4 @@ public class VechielDTO {
     private Status status;
     private String allocatedStaffId; // Only including staff ID, or could include other details as needed
     private String remarks;
-
 }
