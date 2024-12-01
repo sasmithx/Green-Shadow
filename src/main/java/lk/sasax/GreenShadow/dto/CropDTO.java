@@ -13,9 +13,9 @@ import org.springframework.web.multipart.MultipartFile;
 public class CropDTO {
     @Pattern(regexp = "^CR-\\d{3}$\n",message = "Invalid Code")
     private String cropCode;
-    @Pattern(regexp = "^(RICE|COWPEA|GREENGRAM|CHIKPEA|SWEETPOTATO|CASSAVA|REDDISH)$\n",message = "Invalid Common Name")
+    @Pattern(regexp = "^(RICE|COWPEA|GREENGRAM|CHIKPEA|SWEETPOTATO|CASSAVA)$\n",message = "Invalid Common Name")
     private String cropCommonName;
-    @Pattern(regexp = "^(BG34|BW355|CP10|CP90|MI60|MI80|CP2|SP1|RD10|CS5|CS40)$\n", message = "Invalid Scientific Name")
+    @Pattern(regexp = "^(BG\\d{2}|CP\\d{2}|MI\\d{2}|CH\\d{2}|CS\\d{2})$\n", message = "Invalid Scientific Name")
     private String cropScientificName;
     @NotBlank(message = "Crop Image is mandatory")
     private MultipartFile cropImage;
