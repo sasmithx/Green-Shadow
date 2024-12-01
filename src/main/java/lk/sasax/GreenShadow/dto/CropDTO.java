@@ -19,14 +19,14 @@ public class CropDTO {
     private String cropScientificName;
     @NotBlank(message = "Crop Image is mandatory")
     private MultipartFile cropImage;
-    @Pattern(regexp = "/^(FEED|FIBER|OIL|CIREAL)$/i\n")
+    @Pattern(regexp = "\\b(FEED|FIBER|OIL|CIREAL)\\b\n",message = "Invalid Category")
     private String category;
-    @Pattern(regexp = "^[1-9]\\d*$\n")
+    @Pattern(regexp = "^[1-9]\\d*$\n",message = "Invalid Quantity")
     private int qty;
-    @Pattern(regexp = "^(JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)$\n")
+    @Pattern(regexp = "^(JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER)$\n",message = "Invalid Crop Season")
     private String cropSeason;
-    @Pattern(regexp = "^FI-\\d{3}$\n")
+    @Pattern(regexp = "^FI-\\d{3}$\n",message = "Invalid Field Code")
     private String fieldCodes;
-    @Pattern(regexp = "^[A-Za-z]+$\n")
+    @Pattern(regexp = "^[A-Za-z]+$\n",message = "Invalid Field Name")
     private String filedNames;
 }

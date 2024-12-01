@@ -1,4 +1,4 @@
-package lk.sasax.GreenShadow.service.impl;
+package lk.sasax.GreenShadow.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

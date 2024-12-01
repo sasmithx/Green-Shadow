@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EmailRequest {
     @NotBlank(message = "Recipient is required")
-    private String  to; //Recipientemail to send to
+    private String  to;
     @NotBlank(message = "Subject or email title is required")
-    private String subject; //title
-    @NotBlank(message = "Body of emial is required")
-    private String  body; //body text
+    private String subject;
+    @NotBlank(message = "Body of email is required")
+    private String  body;
 }

@@ -1,7 +1,7 @@
 package lk.sasax.GreenShadow.config;
 
 
-import lk.sasax.GreenShadow.service.impl.JWTUtil;
+import lk.sasax.GreenShadow.util.JWTUtil;
 import lk.sasax.GreenShadow.service.impl.UserServiceIMPL;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

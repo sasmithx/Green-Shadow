@@ -3,7 +3,7 @@ package lk.sasax.GreenShadow.entity;
 import jakarta.persistence.*;
 import lk.sasax.GreenShadow.util.Enum.Fuel;
 import lk.sasax.GreenShadow.util.Enum.Status;
-import lk.sasax.GreenShadow.util.Enum.VTypes;
+import lk.sasax.GreenShadow.util.Enum.VehicleTypes;
 import lombok.Data;
 
 @Data
@@ -15,7 +15,7 @@ public class Vehicle {
     private String licensePlateNumber;
 
     @Enumerated(EnumType.STRING)
-    private VTypes vehicleCategory;
+    private VehicleTypes vehicleCategory;
 
     @Enumerated(EnumType.STRING)
     private Fuel fuelType;

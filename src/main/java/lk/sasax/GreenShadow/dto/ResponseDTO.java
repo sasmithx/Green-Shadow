@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Response {
+public class ResponseDTO {
     private int status;
     private String message;
     private final LocalDateTime timestamp = LocalDateTime.now();

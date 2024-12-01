@@ -14,7 +14,6 @@ import java.util.List;
 public class MonitorlogDTO {
     @Null(message = "ID is auto generated")
     private String logCode;
-//    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate logDate;
     private String logDetails;
     private String role;

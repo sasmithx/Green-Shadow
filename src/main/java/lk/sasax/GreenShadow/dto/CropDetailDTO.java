@@ -13,5 +13,4 @@ public class CropDetailDTO {
     private String staffId;// The ID of the staff
     private int quantity;        // Quantity of the crop
     private int membersInStaff;  // Number of staff members working with the crop
-
 }

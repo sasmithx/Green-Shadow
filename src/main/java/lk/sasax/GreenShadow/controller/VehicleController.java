@@ -1,6 +1,6 @@
 package lk.sasax.GreenShadow.controller;
 
-import lk.sasax.GreenShadow.dto.VechielDTO;
+import lk.sasax.GreenShadow.dto.VehicleDTO;
 import lk.sasax.GreenShadow.exception.NotFoundException;
 import lk.sasax.GreenShadow.service.impl.VehicleServiceIMPL;
 import lk.sasax.GreenShadow.util.ResponseUtil;
@@ -31,9 +31,9 @@ public class VehicleController {
 
 
     @PostMapping
-    public ResponseEntity<VechielDTO> saveVehicle(@RequestBody VechielDTO vDTO) {
+    public ResponseEntity<VehicleDTO> saveVehicle(@RequestBody VehicleDTO vDTO) {
         try {
-            VechielDTO saveVehicle = vechielServiceIMPL.saveVehicle(vDTO);
+            VehicleDTO saveVehicle = vechielServiceIMPL.saveVehicle(vDTO);
             logger.info("save Vehicle sucessfully");
             return new ResponseEntity<>(saveVehicle, HttpStatus.CREATED);
         } catch (Exception e) {
@@ -44,7 +44,7 @@ public class VehicleController {
 
 
     @PutMapping("/update")
-    public ResponseEntity<VechielDTO> updateVehicle(@RequestBody VechielDTO vDTO) {
+    public ResponseEntity<VehicleDTO> updateVehicle(@RequestBody VehicleDTO vDTO) {
         try {
             vechielServiceIMPL.updateVehicle(vDTO);
             logger.info("update Vehicle sucessfully");

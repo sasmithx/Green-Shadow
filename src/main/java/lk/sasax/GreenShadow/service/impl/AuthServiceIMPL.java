@@ -4,6 +4,7 @@ import lk.sasax.GreenShadow.dto.ReqRespDTO;
 import lk.sasax.GreenShadow.dto.UserDTO2;
 import lk.sasax.GreenShadow.entity.User;
 import lk.sasax.GreenShadow.repository.UserRepository;
+import lk.sasax.GreenShadow.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class AuthService {
+public class AuthServiceIMPL {
 
     @Autowired
     private UserRepository ourUserRepo;

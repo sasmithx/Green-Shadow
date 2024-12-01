@@ -1,6 +1,6 @@
 package lk.sasax.GreenShadow.service.impl;
 
-import lk.sasax.GreenShadow.dto.VechielDTO;
+import lk.sasax.GreenShadow.dto.VehicleDTO;
 import lk.sasax.GreenShadow.entity.Staff;
 import lk.sasax.GreenShadow.entity.Vehicle;
 import lk.sasax.GreenShadow.exception.NotFoundException;
@@ -28,14 +28,14 @@ public class VehicleServiceIMPL implements VehicleServie {
     @Autowired
     StaffRepository staffRepo;
 
-    public List<VechielDTO> getAllVehecl() {
+    public List<VehicleDTO> getAllVehecl() {
         return vechicleRepo.findAll().stream()
-                .map(v -> mapper.map(v, VechielDTO.class))
+                .map(v -> mapper.map(v, VehicleDTO.class))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public VechielDTO saveVehicle(VechielDTO vDTO) {
+    public VehicleDTO saveVehicle(VehicleDTO vDTO) {
         Vehicle vehicle=new Vehicle();
 
         if(vechicleRepo.existsByVehicleCode(vDTO.getVehicleCode())){
@@ -48,12 +48,12 @@ public class VehicleServiceIMPL implements VehicleServie {
         }
         vDTO.setVehicleCode(genarateNextVcode());
         return mapper.map(vechicleRepo.save(mapper.map(
-                vDTO, Vehicle.class)), VechielDTO.class
+                vDTO, Vehicle.class)), VehicleDTO.class
         );
     }
 
     @Override
-    public void updateVehicle(VechielDTO c) {
+    public void updateVehicle(VehicleDTO c) {
         Vehicle map = mapper.map(c, Vehicle.class);
         vechicleRepo.save(map);
 
@@ -66,14 +66,14 @@ public class VehicleServiceIMPL implements VehicleServie {
 
 
     @Override
-    public VechielDTO searchVehicle(String id) {
+    public VehicleDTO searchVehicle(String id) {
 
         Vehicle vehicle=new Vehicle();
 
         if(!vechicleRepo.existsByVehicleCode(id)){
             throw new NotFoundException("Vid Id "+id+" Not Found!");
         }
-        return mapper.map(vechicleRepo.findByVehicleCode(id), VechielDTO.class);
+        return mapper.map(vechicleRepo.findByVehicleCode(id), VehicleDTO.class);
     }
 
 
