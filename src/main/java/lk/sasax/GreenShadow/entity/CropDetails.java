@@ -8,7 +8,6 @@ import lombok.Data;
 @IdClass(Monitoring_Pk.class)
 public class CropDetails {
 
-
     @Id
     private String logCode;
     @Id
@@ -21,22 +20,16 @@ public class CropDetails {
     private int membersInStaff;
 
 
-
     @ManyToOne
-    @JoinColumn(name = "logCode",referencedColumnName = "logCode",insertable = false,updatable = false)
+    @JoinColumn(name = "logCode",referencedColumnName = "logCode")
     private MonitoringLogService logService;
 
-    //Out-verse
     @ManyToOne
-    @JoinColumn(name = "staff_id",insertable = false,updatable = false)
+    @JoinColumn(name = "staff_id")
     private Staff staff;
 
-
-
     @ManyToOne
-    @JoinColumn(name = "crop_code",insertable = false,updatable = false)
+    @JoinColumn(name = "crop_code")
     private Crop crop;
-
-
 
 }

@@ -14,8 +14,6 @@ public interface StaffService {
 
     void deleteStaff(String id) ;
 
-    StaffDTO searchStaff(String id) ;
-
     String genarateNextStaffCode() ;
 
     long getStaffCount() ;

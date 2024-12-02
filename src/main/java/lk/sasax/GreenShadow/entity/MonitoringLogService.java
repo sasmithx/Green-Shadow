@@ -23,14 +23,11 @@ public class MonitoringLogService {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH})
+    @ManyToOne
     @JoinColumn(name = "field_code", nullable = false)
     private Field  field;
 
-
-    // Initialize the cropDetails list to avoid NullPointerException
-    @OneToMany(mappedBy = "logService", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<CropDetails> cropDetails = new ArrayList<>(); // Initialize with an empty list
-
+    @OneToMany(mappedBy = "logService")
+    private List<CropDetails> cropDetails = new ArrayList<>();
 
 }

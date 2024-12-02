@@ -2,6 +2,7 @@ package lk.sasax.GreenShadow.service.impl;
 
 import lk.sasax.GreenShadow.dto.StaffDTO;
 import lk.sasax.GreenShadow.entity.Staff;
+import lk.sasax.GreenShadow.exception.DuplicateRecordException;
 import lk.sasax.GreenShadow.exception.NotFoundException;
 import lk.sasax.GreenShadow.repository.StaffRepository;
 import lk.sasax.GreenShadow.service.StaffService;
@@ -31,7 +32,7 @@ public class StaffServiceIMPL  implements StaffService {
 
     public StaffDTO saveStaff(StaffDTO sDTO) {
         if(staffRepo.existsByStaffId(sDTO.getStaffId())){
-            throw new NotFoundException("This StaffId "+sDTO.getStaffId()+" already exicts...");
+            throw new DuplicateRecordException("This StaffId "+sDTO.getStaffId()+" already exists");
         }
         sDTO.setStaffId(genarateNextStaffCode());
         return mapper.map(staffRepo.save(mapper.map(
@@ -40,25 +41,14 @@ public class StaffServiceIMPL  implements StaffService {
     }
 
 
-    public void updateStaff(StaffDTO c) {
-
-       Staff map = mapper.map(c, Staff.class);
+    public void updateStaff(StaffDTO staffDTO) {
+        Staff map = mapper.map(staffDTO, Staff.class);
         staffRepo.save(map);
-
     }
 
 
     public void deleteStaff(String sid) {
       staffRepo.deleteById(sid);
-    }
-
-
-    public StaffDTO searchStaff(String id) {
-
-        if(!staffRepo.existsByStaffId(id)){
-            throw new NotFoundException("Staff Id "+id+" Not Found!");
-        }
-        return mapper.map(staffRepo.findByStaffId(id), StaffDTO.class);
     }
 
 

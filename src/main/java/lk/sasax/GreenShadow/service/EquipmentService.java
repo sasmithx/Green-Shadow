@@ -3,15 +3,19 @@ package lk.sasax.GreenShadow.service;
 
 import lk.sasax.GreenShadow.dto.EquipmentDTO;
 
+import java.util.List;
+
 public interface EquipmentService {
 
-    EquipmentDTO saveEq(EquipmentDTO eDTO) ;
+    EquipmentDTO saveEquipment(EquipmentDTO eDTO) ;
 
-    void updateEq(EquipmentDTO c) ;
+    void updateEquipment(EquipmentDTO c) ;
 
-    void deleteEq(String sid);
+    void deleteEquipment(String sid);
 
-    String genarateNextEcode() ;
+    List<EquipmentDTO> getAllEquipments();
+
+    String generateNextEquipmentCode() ;
 
     long getEquipmentCount();
 

@@ -2,7 +2,7 @@ package lk.sasax.GreenShadow.controller;
 
 import lk.sasax.GreenShadow.dto.EquipmentDTO;
 import lk.sasax.GreenShadow.exception.NotFoundException;
-import lk.sasax.GreenShadow.service.impl.EquipmentServiceIMPL;
+import lk.sasax.GreenShadow.service.EquipmentService;
 import lk.sasax.GreenShadow.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 public class EquipmentController {
 
     @Autowired
-    EquipmentServiceIMPL eqServiceIMPL;
+    EquipmentService equipmentService;
 
     private static final Logger logger = LoggerFactory.getLogger(EquipmentController.class);
 
@@ -25,13 +25,13 @@ public class EquipmentController {
     @GetMapping
     public ResponseUtil getAlEq() {
         logger.info("Equipments found successfully");
-        return new ResponseUtil(200, "OK", eqServiceIMPL.getAllEq());
+        return new ResponseUtil(200, "OK", equipmentService.getAllEquipments());
     }
 
     @PostMapping
     public ResponseEntity<EquipmentDTO> saveEq(@RequestBody EquipmentDTO eDTO) {
         try {
-            EquipmentDTO savee = eqServiceIMPL.saveEq(eDTO);
+            EquipmentDTO savee = equipmentService.saveEquipment(eDTO);
             logger.info("Equipment saved successfully");
             return new ResponseEntity<>(savee, HttpStatus.CREATED);
         } catch (Exception e) {
@@ -44,7 +44,7 @@ public class EquipmentController {
     @PutMapping("/update")
     public ResponseEntity<EquipmentDTO> updateEq(@RequestBody EquipmentDTO eDTO) {
         try {
-            eqServiceIMPL.updateEq(eDTO);
+            equipmentService.updateEquipment(eDTO);
             logger.info("Equipment updated successfully");
             return new ResponseEntity<>(eDTO, HttpStatus.OK);
         } catch (NotFoundException e) {
@@ -56,7 +56,7 @@ public class EquipmentController {
 
     @DeleteMapping
     public  ResponseUtil deleteEq(@RequestParam("eCode") String eCode){
-        eqServiceIMPL.deleteEq(eCode);
+        equipmentService.deleteEquipment(eCode);
         logger.info("Equipment deleted successfully");
         return new ResponseUtil(200,"Deleted",null);
 
@@ -67,7 +67,7 @@ public class EquipmentController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     String getNextEquipmentCode(){
         logger.info("Next equipment code generated successfully");
-        return eqServiceIMPL.genarateNextEcode();
+        return equipmentService.generateNextEquipmentCode();
     }
 
 }
