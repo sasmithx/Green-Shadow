@@ -3,6 +3,7 @@ package lk.sasax.GreenShadow.service.impl;
 import jakarta.persistence.EntityNotFoundException;
 import lk.sasax.GreenShadow.dto.CropDTO;
 import lk.sasax.GreenShadow.entity.Crop;
+import lk.sasax.GreenShadow.exception.NotFoundException;
 import lk.sasax.GreenShadow.repository.CropRepository;
 import lk.sasax.GreenShadow.service.CropService;
 import lk.sasax.GreenShadow.util.Enum.CropCategory;
@@ -23,7 +24,6 @@ import java.util.stream.Collectors;
 @Service
 public class CropServiceIMPL implements CropService {
 
-
     @Autowired
     private CropRepository cropRepository;
 
@@ -42,7 +42,6 @@ public class CropServiceIMPL implements CropService {
         }
 
         String generatedCropCode = generateCropCode();
-
         Crop crop = new Crop();
         crop.setCropCode(generatedCropCode);
         crop.setCropCommonName(CropComnName.valueOf(cropDTO.getCropCommonName()));
@@ -56,28 +55,33 @@ public class CropServiceIMPL implements CropService {
         return cropRepository.save(crop);
     }
 
-
-
     @Transactional
     @Override
     public Crop updateCrop(String cropCode, CropDTO cropDTO) throws IOException {
+        Crop crop = Optional.ofNullable(cropRepository.findByCropCode(cropCode))
+                .orElseThrow(() -> new EntityNotFoundException("Crop not found : " + cropCode));
 
-        Optional<Crop> optionalCrop = Optional.ofNullable(cropRepository.findByCropCode(cropCode));
+        Optional.ofNullable(cropDTO.getCropCommonName())
+                .ifPresent(name -> crop.setCropCommonName(CropComnName.valueOf(name)));
+        Optional.ofNullable(cropDTO.getCropScientificName())
+                .ifPresent(name -> crop.setCropScientificName(CropScienceName.valueOf(name)));
+        Optional.ofNullable(cropDTO.getCategory())
+                .ifPresent(category -> crop.setCategory(CropCategory.valueOf(category)));
+        if (cropDTO.getQty() != 0) crop.setQty(cropDTO.getQty());
+        Optional.ofNullable(cropDTO.getCropSeason())
+                .ifPresent(season -> crop.setCropSeason(CropSesasons.valueOf(season)));
+        Optional.ofNullable(cropDTO.getFieldCodes()).ifPresent(crop::setFieldCodes);
+        Optional.ofNullable(cropDTO.getFiledNames()).ifPresent(crop::setFiledNames);
+        Optional.ofNullable(cropDTO.getCropImage())
+                .filter(image -> !image.isEmpty())
+                .ifPresent(image -> {
+                    try {
+                        crop.setCropImage(fileUploader.storeFile(image));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
 
-        if (!optionalCrop.isPresent()) {
-            throw new EntityNotFoundException("Crop not found with code: " + cropCode);
-        }
-
-        Crop crop = optionalCrop.get();
-        crop.setCropCommonName(CropComnName.valueOf(cropDTO.getCropCommonName()));
-        crop.setCropScientificName(CropScienceName.valueOf(cropDTO.getCropScientificName()));
-        crop.setCategory(CropCategory.valueOf(cropDTO.getCategory()));
-        crop.setQty(cropDTO.getQty());
-        crop.setCropSeason(CropSesasons.valueOf(cropDTO.getCropSeason()));
-        crop.setFieldCodes(cropDTO.getFieldCodes());
-        crop.setFiledNames(cropDTO.getFiledNames());
-        String cropImage = fileUploader.storeFile(cropDTO.getCropImage());
-        crop.setCropImage(cropImage);
         return cropRepository.save(crop);
     }
 
