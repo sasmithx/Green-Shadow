@@ -26,7 +26,7 @@ public class VehicleController {
     @GetMapping
     public ResponseUtil getAlVehicles() {
         logger.info("getAlVehicles sucessfully");
-        return new ResponseUtil(200, "OK", vechielServiceIMPL.getAllVehecl());
+        return new ResponseUtil(200, "OK", vechielServiceIMPL.getAllVehicles());
     }
 
 

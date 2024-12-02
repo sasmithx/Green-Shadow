@@ -23,72 +23,59 @@ public class VehicleServiceIMPL implements VehicleServie {
     ModelMapper mapper;
 
     @Autowired
-    VechicleRepository vechicleRepo;
+    VechicleRepository vechicleRepository;
 
     @Autowired
-    StaffRepository staffRepo;
+    StaffRepository staffRepository;
 
-    public List<VehicleDTO> getAllVehecl() {
-        return vechicleRepo.findAll().stream()
+    @Override
+    public VehicleDTO saveVehicle(VehicleDTO vehicleDTO) {
+        Vehicle vehicle=new Vehicle();
+
+        if(vechicleRepository.existsByVehicleCode(vehicleDTO.getVehicleCode())){
+            throw new NotFoundException("Already Exists This "+vehicleDTO.getVehicleCode());
+        }
+
+        Staff staff = staffRepository.findByStaffId(vehicleDTO.getAllocatedStaffId());
+        if (staff != null) {
+            vehicle.setAllocatedStaff(staff);
+        }
+        vehicleDTO.setVehicleCode(genarateNextVcode());
+        return mapper.map(vechicleRepository.save(mapper.map(
+                vehicleDTO, Vehicle.class)), VehicleDTO.class
+        );
+    }
+
+    @Override
+    public void updateVehicle(VehicleDTO vehicleDTO) {
+        Vehicle map = mapper.map(vehicleDTO, Vehicle.class);
+        vechicleRepository.save(map);
+    }
+
+    @Override
+    public void deleteVehicle(String sid) {
+        vechicleRepository.deleteById(sid);
+    }
+
+    @Override
+    public List<VehicleDTO> getAllVehicles() {
+        return vechicleRepository.findAll().stream()
                 .map(v -> mapper.map(v, VehicleDTO.class))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public VehicleDTO saveVehicle(VehicleDTO vDTO) {
-        Vehicle vehicle=new Vehicle();
-
-        if(vechicleRepo.existsByVehicleCode(vDTO.getVehicleCode())){
-            throw new NotFoundException("This vId "+vDTO.getVehicleCode()+" already exicts...");
-        }
-
-        Staff staff = staffRepo.findByStaffId(vDTO.getAllocatedStaffId());
-        if (staff != null) {
-            vehicle.setAllocatedStaff(staff);
-        }
-        vDTO.setVehicleCode(genarateNextVcode());
-        return mapper.map(vechicleRepo.save(mapper.map(
-                vDTO, Vehicle.class)), VehicleDTO.class
-        );
-    }
-
-    @Override
-    public void updateVehicle(VehicleDTO c) {
-        Vehicle map = mapper.map(c, Vehicle.class);
-        vechicleRepo.save(map);
-
-    }
-
-    @Override
-    public void deleteVehicle(String sid) {
-        vechicleRepo.deleteById(sid);
-    }
-
-
-    @Override
-    public VehicleDTO searchVehicle(String id) {
-
-        Vehicle vehicle=new Vehicle();
-
-        if(!vechicleRepo.existsByVehicleCode(id)){
-            throw new NotFoundException("Vid Id "+id+" Not Found!");
-        }
-        return mapper.map(vechicleRepo.findByVehicleCode(id), VehicleDTO.class);
-    }
-
-
-    @Override
     public String genarateNextVcode(){
-        String lastCustomerCode = vechicleRepo.findLatestVehicleCode();
-        if(lastCustomerCode==null){lastCustomerCode = "VE00";}
-        int numericPart = Integer.parseInt(lastCustomerCode.substring(3));
+        String latestVehicleCode = vechicleRepository.findLatestVehicleCode();
+        if(latestVehicleCode==null){latestVehicleCode = "VE00";}
+        int numericPart = Integer.parseInt(latestVehicleCode.substring(3));
         numericPart++;
-        String nextSupplierCode = "VE-" + String.format("%03d", numericPart);
-        return nextSupplierCode;
+        String nextVehicleCode = "VE-" + String.format("%03d", numericPart);
+        return nextVehicleCode;
     }
 
     @Override
     public long getVehicleCount() {
-        return vechicleRepo.count();
+        return vechicleRepository.count();
     }
 }
