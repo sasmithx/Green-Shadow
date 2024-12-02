@@ -29,15 +29,12 @@ public class FieldServiceIMPL implements FieldService {
 
     @Autowired
     FieldRepository fieldRepository;
-
     @Autowired
     CropRepository cropRepository;
     @Autowired
     StaffRepository staffRepository;
-
     @Autowired
     ModelMapper mapper;
-
     @Value("${field.images.directory}")
     private String imgDirectory;
 
@@ -123,7 +120,6 @@ public class FieldServiceIMPL implements FieldService {
         );
     }
 
-
     public void deleteFiled(String employeeCode) {
         fieldRepository.deleteById(employeeCode);
     }
@@ -145,7 +141,6 @@ public class FieldServiceIMPL implements FieldService {
                 })
                 .collect(Collectors.toList());
     }
-
 
     public String generateFieldCode() {
         long count = fieldRepository.count() + 1;
