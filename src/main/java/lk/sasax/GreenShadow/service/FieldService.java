@@ -7,15 +7,16 @@ import java.io.IOException;
 import java.util.List;
 
 public interface FieldService {
-    List<FieldDTO> getAllFields() ;
 
     FieldDTO saveField(FieldDTO fieldDTO, MultipartFile fieldImageFile) throws IOException ;
 
-    String generateFieldCode() ;
+    FieldDTO updateField(String fieldCode, FieldDTO fieldDTO, MultipartFile fieldImageFile) throws IOException ;
 
     void deleteFiled(String employeeCode);
 
-    FieldDTO updateField(String fieldCode, FieldDTO fieldDTO, MultipartFile fieldImageFile) throws IOException ;
+    List<FieldDTO> getAllFields() ;
+
+    String generateFieldCode() ;
 
     long getFieldCount() ;
 }
