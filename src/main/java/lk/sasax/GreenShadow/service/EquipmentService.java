@@ -5,17 +5,14 @@ import lk.sasax.GreenShadow.dto.EquipmentDTO;
 
 public interface EquipmentService {
 
-    public EquipmentDTO saveEq(EquipmentDTO eDTO) ;
+    EquipmentDTO saveEq(EquipmentDTO eDTO) ;
 
+    void updateEq(EquipmentDTO c) ;
 
+    void deleteEq(String sid);
 
-    public void updateEq(EquipmentDTO c) ;
+    String genarateNextEcode() ;
 
-
-    public void deleteEq(String sid);
-
-
-
-    public String genarateNextEcode() ;
+    long getEquipmentCount();
 
 }

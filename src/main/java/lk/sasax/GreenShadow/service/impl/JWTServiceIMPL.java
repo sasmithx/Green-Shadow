@@ -1,4 +1,4 @@
-package lk.sasax.GreenShadow.util;
+package lk.sasax.GreenShadow.service.impl;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -14,11 +14,11 @@ import java.util.HashMap;
 import java.util.function.Function;
 
 @Component
-public class JWTUtil {
+public class JWTServiceIMPL {
 
     private SecretKey Key;
     private  static  final long EXPIRATION_TIME = 86400000;
-    public JWTUtil(){
+    public JWTServiceIMPL(){
         String secreteString = "843567895696976453275874432697R634976R738467TR678T39865R6834R8763T47837863766453874567386578367";
         byte[] keyBytes = Base64.getDecoder().decode(secreteString.getBytes(StandardCharsets.UTF_8));
         this.Key = new SecretKeySpec(keyBytes, "HmacSHA256");

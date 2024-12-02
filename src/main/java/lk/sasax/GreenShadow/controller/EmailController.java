@@ -1,7 +1,7 @@
 package lk.sasax.GreenShadow.controller;
 
 import jakarta.validation.Valid;
-import lk.sasax.GreenShadow.dto.EmailRequest;
+import lk.sasax.GreenShadow.dto.EmailDTO;
 import lk.sasax.GreenShadow.service.impl.EmailServiceIMPL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class EmailController {
     private EmailServiceIMPL emailService;
 
     @PostMapping("/send")
-    public ResponseEntity<String> sendEmail(@Valid @RequestBody EmailRequest emailRequest){
-        return  ResponseEntity.ok(emailService.sendEmail(emailRequest));
+    public ResponseEntity<String> sendEmail(@Valid @RequestBody EmailDTO emailDTO){
+        return  ResponseEntity.ok(emailService.sendEmail(emailDTO));
     }
 }

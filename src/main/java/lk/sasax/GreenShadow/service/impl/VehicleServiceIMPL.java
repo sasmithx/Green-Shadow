@@ -86,4 +86,9 @@ public class VehicleServiceIMPL implements VehicleServie {
         String nextSupplierCode = "VE-" + String.format("%03d", numericPart);
         return nextSupplierCode;
     }
+
+    @Override
+    public long getVehicleCount() {
+        return vechicleRepo.count();
+    }
 }

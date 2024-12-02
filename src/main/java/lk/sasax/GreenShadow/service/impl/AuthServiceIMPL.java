@@ -4,7 +4,6 @@ import lk.sasax.GreenShadow.dto.ReqRespDTO;
 import lk.sasax.GreenShadow.dto.UserDTO2;
 import lk.sasax.GreenShadow.entity.User;
 import lk.sasax.GreenShadow.repository.UserRepository;
-import lk.sasax.GreenShadow.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,7 +20,7 @@ public class AuthServiceIMPL {
     @Autowired
     private UserRepository ourUserRepo;
     @Autowired
-    private JWTUtil jwtUtil;
+    private JWTServiceIMPL jwtServiceIMPL;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
@@ -54,8 +53,8 @@ public class AuthServiceIMPL {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(signinRequest.getEmail(),signinRequest.getPassword()));
             var user = ourUserRepo.findByEmail(signinRequest.getEmail()).orElseThrow();
             System.out.println("USER IS: "+ user);
-            var jwt = jwtUtil.generateToken(user);
-            var refreshToken = jwtUtil.generateRefreshToken(new HashMap<>(), user);
+            var jwt = jwtServiceIMPL.generateToken(user);
+            var refreshToken = jwtServiceIMPL.generateRefreshToken(new HashMap<>(), user);
             response.setStatusCode(200);
             response.setToken(jwt);
             response.setRefreshToken(refreshToken);
@@ -70,10 +69,10 @@ public class AuthServiceIMPL {
 
     public ReqRespDTO refreshToken(ReqRespDTO refreshTokenReqiest){
         ReqRespDTO response = new ReqRespDTO();
-        String ourEmail = jwtUtil.extractUsername(refreshTokenReqiest.getToken());
+        String ourEmail = jwtServiceIMPL.extractUsername(refreshTokenReqiest.getToken());
         User users = ourUserRepo.findByEmail(ourEmail).orElseThrow();
-        if (jwtUtil.isTokenValid(refreshTokenReqiest.getToken(), users)) {
-            var jwt = jwtUtil.generateToken(users);
+        if (jwtServiceIMPL.isTokenValid(refreshTokenReqiest.getToken(), users)) {
+            var jwt = jwtServiceIMPL.generateToken(users);
             response.setStatusCode(200);
             response.setToken(jwt);
             response.setRefreshToken(refreshTokenReqiest.getToken());

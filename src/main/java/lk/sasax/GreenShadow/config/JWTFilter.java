@@ -1,7 +1,7 @@
 package lk.sasax.GreenShadow.config;
 
 
-import lk.sasax.GreenShadow.util.JWTUtil;
+import lk.sasax.GreenShadow.service.impl.JWTServiceIMPL;
 import lk.sasax.GreenShadow.service.impl.UserServiceIMPL;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -22,7 +22,7 @@ import java.io.IOException;
 public class JWTFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JWTUtil jwtUtil;
+    private JWTServiceIMPL jwtServiceIMPL;
     @Autowired
     private UserServiceIMPL ourUserDetailsService;
 
@@ -36,11 +36,11 @@ public class JWTFilter extends OncePerRequestFilter {
             return;
         }
         jwtToken = authHeader.substring(7);
-        userEmail = jwtUtil.extractUsername(jwtToken);
+        userEmail = jwtServiceIMPL.extractUsername(jwtToken);
         if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = ourUserDetailsService.loadUserByUsername(userEmail);
 
-            if (jwtUtil.isTokenValid(jwtToken, userDetails)) {
+            if (jwtServiceIMPL.isTokenValid(jwtToken, userDetails)) {
                 SecurityContext securityContext = SecurityContextHolder.createEmptyContext();
                 UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                         userDetails, null, userDetails.getAuthorities()

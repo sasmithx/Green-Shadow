@@ -16,4 +16,8 @@ public class UserServiceIMPL implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return ourUserRepo.findByEmail(username).orElseThrow();
     }
+
+    public long getUserCount() {
+        return ourUserRepo.count();
+    }
 }

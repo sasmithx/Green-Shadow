@@ -131,5 +131,9 @@ public class CropServiceIMPL {
         return String.format("CR-%03d", count);
     }
 
+    public long getCropCount() {
+        return cropRepository.count();
+    }
+
 
 }

@@ -102,5 +102,10 @@ public class EquipmentServiceIMPL implements EquipmentService {
         return nextSupplierCode;
     }
 
+    @Override
+    public long getEquipmentCount() {
+        return eqRepo.count();
+    }
+
 
 }

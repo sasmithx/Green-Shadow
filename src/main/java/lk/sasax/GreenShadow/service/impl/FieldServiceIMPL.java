@@ -192,4 +192,9 @@ public class FieldServiceIMPL implements FieldService {
 
         return updatedFieldDTO;
     }
+
+    @Override
+    public long getFieldCount() {
+        return fieldRepo.count();
+    }
 }

@@ -70,4 +70,9 @@ public class StaffServiceIMPL  implements StaffService {
         String nextSupplierCode = "ST-" + String.format("%03d", numericPart);
         return nextSupplierCode;
     }
+
+    @Override
+    public long getStaffCount() {
+        return staffRepo.count();
+    }
 }

@@ -6,19 +6,17 @@ import lk.sasax.GreenShadow.dto.StaffDTO;
 import java.util.List;
 
 public interface StaffService {
-    public List<StaffDTO> getAllCrops() ;
+    List<StaffDTO> getAllCrops() ;
 
+    StaffDTO saveStaff(StaffDTO sDTO) ;
 
-    public StaffDTO saveStaff(StaffDTO sDTO) ;
+    void updateStaff(StaffDTO c) ;
 
+    void deleteStaff(String id) ;
 
-    public void updateStaff(StaffDTO c) ;
+    StaffDTO searchStaff(String id) ;
 
-    public void deleteStaff(String id) ;
+    String genarateNextStaffCode() ;
 
-
-    public StaffDTO searchStaff(String id) ;
-
-
-    public String genarateNextStaffCode() ;
+    long getStaffCount() ;
 }

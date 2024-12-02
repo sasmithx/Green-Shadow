@@ -7,20 +7,17 @@ import java.util.List;
 
 public interface VehicleServie {
 
-    public List<VehicleDTO> getAllVehecl() ;
+    List<VehicleDTO> getAllVehecl() ;
 
+    VehicleDTO saveVehicle(VehicleDTO vDTO) ;
 
+    void updateVehicle(VehicleDTO c) ;
 
+    void deleteVehicle(String sid);
 
-    public VehicleDTO saveVehicle(VehicleDTO vDTO) ;
+    VehicleDTO searchVehicle(String id) ;
 
+    String genarateNextVcode();
 
-    public void updateVehicle(VehicleDTO c) ;
-
-    public void deleteVehicle(String sid);
-
-
-    public VehicleDTO searchVehicle(String id) ;
-
-    public String genarateNextVcode();
+    long getVehicleCount() ;
 }

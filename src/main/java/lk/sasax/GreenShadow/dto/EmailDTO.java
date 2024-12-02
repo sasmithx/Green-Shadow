@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmailRequest {
+public class EmailDTO {
     @NotBlank(message = "Recipient is required")
     private String  to;
     @NotBlank(message = "Subject or email title is required")
