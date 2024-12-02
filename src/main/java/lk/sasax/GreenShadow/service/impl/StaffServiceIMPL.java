@@ -21,26 +21,29 @@ public class StaffServiceIMPL  implements StaffService {
     @Autowired
     StaffRepository staffRepository;
 
-    public StaffDTO saveStaff(StaffDTO sDTO) {
-        if(staffRepository.existsByStaffId(sDTO.getStaffId())){
-            throw new DuplicateRecordException("This StaffId "+sDTO.getStaffId()+" already exists");
+    @Override
+    public StaffDTO saveStaff(StaffDTO staffDTO) {
+        if(staffRepository.existsByStaffId(staffDTO.getStaffId())){
+            throw new DuplicateRecordException("This StaffId "+staffDTO.getStaffId()+" already exists");
         }
-        sDTO.setStaffId(genarateNextStaffCode());
+        staffDTO.setStaffId(generateNextStaffCode());
         return mapper.map(staffRepository.save(mapper.map(
-                sDTO, Staff.class)), StaffDTO.class
+                staffDTO, Staff.class)), StaffDTO.class
         );
     }
 
+    @Override
     public void updateStaff(StaffDTO staffDTO) {
         Staff map = mapper.map(staffDTO, Staff.class);
         staffRepository.save(map);
     }
 
-    public void deleteStaff(String sid) {
-      staffRepository.deleteById(sid);
+    @Override
+    public void deleteStaff(String staffId) {
+      staffRepository.deleteById(staffId);
     }
 
-    public String genarateNextStaffCode() {
+    public String generateNextStaffCode() {
         String latestStaffCode= staffRepository.findLatestStaffId();
         if(latestStaffCode==null){latestStaffCode = "ST00";}
         int numericPart = Integer.parseInt(latestStaffCode.substring(3));
@@ -49,6 +52,7 @@ public class StaffServiceIMPL  implements StaffService {
         return nextStaffCode;
     }
 
+    @Override
     public List<StaffDTO> getAllCrops() {
         return staffRepository.findAll().stream()
                 .map(crop -> mapper.map(crop, StaffDTO.class))

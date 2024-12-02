@@ -68,6 +68,6 @@ public class StaffController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     String getNextStaffCode(){
         logger.info("getNextStaffCode successfully");
-        return staffServiceIMPL.genarateNextStaffCode();
+        return staffServiceIMPL.generateNextStaffCode();
     }
 }

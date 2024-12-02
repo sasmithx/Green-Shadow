@@ -7,15 +7,15 @@ import java.util.List;
 
 public interface StaffService {
 
-    StaffDTO saveStaff(StaffDTO sDTO) ;
+    StaffDTO saveStaff(StaffDTO staffDTO) ;
 
-    void updateStaff(StaffDTO c) ;
+    void updateStaff(StaffDTO staffDTO) ;
 
-    void deleteStaff(String id) ;
+    void deleteStaff(String staffId) ;
 
     List<StaffDTO> getAllCrops() ;
 
-    String genarateNextStaffCode() ;
+    String generateNextStaffCode() ;
 
     long getStaffCount() ;
 }
