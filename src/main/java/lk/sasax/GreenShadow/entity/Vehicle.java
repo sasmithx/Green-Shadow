@@ -11,25 +11,15 @@ import lombok.Data;
 public class Vehicle {
     @Id
     private String vehicleCode;
-
     private String licensePlateNumber;
-
     @Enumerated(EnumType.STRING)
     private VehicleTypes vehicleCategory;
-
     @Enumerated(EnumType.STRING)
     private Fuel fuelType;
-
     @Enumerated(EnumType.STRING)
     private Status status;
-
     @ManyToOne
     @JoinColumn(name = "staff_id")
     private Staff allocatedStaff;
-
     private String remarks;
-
-
-
-
 }

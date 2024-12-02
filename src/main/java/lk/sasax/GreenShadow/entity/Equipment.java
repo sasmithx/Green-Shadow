@@ -29,12 +29,4 @@ public class Equipment {
     @ManyToOne
     @JoinColumn(name = "field_code")
     private Field assignedField;
-
-//
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy =  "equpment")
-//    private List<CropDetails> cropDetails=new ArrayList<>();
-
-
-
-
 }

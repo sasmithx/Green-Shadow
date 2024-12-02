@@ -3,8 +3,6 @@ package lk.sasax.GreenShadow.service.impl;
 import lk.sasax.GreenShadow.dto.CropDetailDTO;
 import lk.sasax.GreenShadow.dto.FieldDTO;
 import lk.sasax.GreenShadow.dto.MonitorlogDTO;
-import lk.sasax.GreenShadow.entity.Crop;
-import lk.sasax.GreenShadow.entity.CropDetails;
 import lk.sasax.GreenShadow.entity.Field;
 import lk.sasax.GreenShadow.entity.MonitoringLogService;
 import lk.sasax.GreenShadow.exception.NotFoundException;
@@ -13,12 +11,8 @@ import lk.sasax.GreenShadow.util.Enum.UserRole;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -41,7 +35,6 @@ public class MonitorlogServiceIMPL {
     @Autowired
     private ModelMapper modelMapper;
 
-
     public void saveLog(MonitorlogDTO monitorlogDTO){
         monitorlogDTO.setLogCode(nextCode("LOG-"));
 
@@ -52,7 +45,6 @@ public class MonitorlogServiceIMPL {
         }
 
     }
-
 
     public void updateLog(String id, MonitorlogDTO monitorlogDTO, FieldDTO fieldDTO){
         MonitoringLogService log = monitoringLogRepository.findByLogCode(id)
@@ -68,8 +60,6 @@ public class MonitorlogServiceIMPL {
         monitoringLogRepository.save(modelMapper.map(log, MonitoringLogService.class));
 
     }
-
-
 
     public List<MonitorlogDTO> getAllMonitoringLogs() {
         List<MonitoringLogService> logs = monitoringLogRepository.findAll();
@@ -104,41 +94,9 @@ public class MonitorlogServiceIMPL {
                 .collect(Collectors.toList());
     }
 
-
-
-    @Transactional(readOnly = true)
-    public Crop findMostUsedCrop() {
-        List<CropDetails> cropDetailsList = cropDetailRepo.findAll();
-
-        Map<String, Integer> cropCountMap = new HashMap<>();
-
-        for (CropDetails cropDetails : cropDetailsList) {
-            String cropCode = cropDetails.getCrop_code();
-            cropCountMap.put(cropCode, cropCountMap.getOrDefault(cropCode, 0) + cropDetails.getQuantity());
-        }
-
-        String mostUsedCropCode = null;
-        int maxCount = 0;
-        for (Map.Entry<String, Integer> entry : cropCountMap.entrySet()) {
-            if (entry.getValue() > maxCount) {
-                mostUsedCropCode = entry.getKey();
-                maxCount = entry.getValue();
-            }
-        }
-
-        if (mostUsedCropCode != null) {
-            return cropRepo.findById(mostUsedCropCode)
-                    .orElseThrow(() -> new IllegalArgumentException("Most used crop not found"));
-        }
-
-        return null;
-    }
-
     public String nextCode(String prefix) {
         long count = monitoringLogRepository.count();
-
         String nextInventoryCode = prefix + String.format("%03d", count + 1);
         return nextInventoryCode;
     }
-
 }

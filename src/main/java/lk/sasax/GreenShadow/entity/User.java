@@ -18,7 +18,6 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -29,7 +28,6 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role));
     }
-
 
     @Override
     public String getUsername() {

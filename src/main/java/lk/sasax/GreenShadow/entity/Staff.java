@@ -16,36 +16,24 @@ public class Staff {
     @Id
     @Column(name = "staff_id", unique = true, nullable = false)
     private String staffId;
-
     private String firstName;
-
     private String lastName;
-
-  @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private Designation designation;
-
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
     private LocalDate joinedDate;
-
     private LocalDate dob;
-
     private String addressLine1;
     private String addressLine2;
     private String addressLine3;
     private String addressLine4;
     private String addressLine5;
-
     private String contactNo;
-
     private String email;
-
     private int members;
-
     private String fieldCode;
     private String vCode;
-
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy =  "staff")
     private List<Field> filed = new ArrayList<>();

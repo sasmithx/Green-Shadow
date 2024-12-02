@@ -11,8 +11,6 @@ import java.io.Serializable;
 @Data
 public class Monitoring_Pk implements Serializable {
     private String logCode;
-
     private String crop_code;
-
     private String staff_id;
 }

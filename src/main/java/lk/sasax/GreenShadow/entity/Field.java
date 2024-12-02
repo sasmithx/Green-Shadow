@@ -26,15 +26,9 @@ public class Field {
     private String nameOfCrop;
 
     @ManyToOne
-    @JoinColumn(name = "staff_id" )// This will not create a separate table
+    @JoinColumn(name = "staff_id" )
     private Staff staff;
-
-
 
     @Column(name = "field_image1" , columnDefinition = "LONGTEXT")
     private String fieldImage1;
-
-
-
-
 }

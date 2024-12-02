@@ -8,8 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig  implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        // Map the URL "/images/**" to the file path where images are stored
         registry.addResourceHandler("/images/**")
-                .addResourceLocations("file:C:\\Users\\Sasa_x\\Downloads\\Upload");  // Path where images are stored
+                .addResourceLocations("file:C:\\Users\\Sasa_x\\Documents\\AAD-CW\\ImgDB");
     }
 }

@@ -3,7 +3,6 @@ package lk.sasax.GreenShadow.controller;
 import lk.sasax.GreenShadow.dto.CropDetailDTO;
 import lk.sasax.GreenShadow.dto.FieldDTO;
 import lk.sasax.GreenShadow.dto.MonitorlogDTO;
-import lk.sasax.GreenShadow.entity.Crop;
 import lk.sasax.GreenShadow.service.impl.MonitorlogServiceIMPL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -47,18 +45,6 @@ public class MonitorlogController {
         List<MonitorlogDTO> logs = monitorlogServiceIMPL.getAllMonitoringLogs();
         logger.info("Get all monitoring logs successfully.");
         return ResponseEntity.ok(logs);
-    }
-
-
-    @GetMapping("/most-used")
-    public String getMostUsedCrop() {
-        Crop mostUsedCrop = monitorlogServiceIMPL.findMostUsedCrop();
-        if (mostUsedCrop == null) {
-            logger.error("Error finding most used Crop");
-            throw new NullPointerException("Most used crop not found.");
-        }
-        logger.info("Get most used Crop successfully.");
-        return mostUsedCrop.getCropCode();
     }
 
     @GetMapping("/generateCode")
