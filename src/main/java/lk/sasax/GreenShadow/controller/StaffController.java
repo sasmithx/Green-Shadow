@@ -22,13 +22,6 @@ public class StaffController {
 
     private static final Logger logger = LoggerFactory.getLogger(StaffController.class);
 
-    @GetMapping
-    public ResponseUtil getAllStaffs() {
-        logger.info("getAllStaffs successfully");
-        return new ResponseUtil(200, "OK", staffServiceIMPL.getAllCrops());
-    }
-
-
     @PostMapping
     public ResponseEntity<StaffDTO> saveStaff(@RequestBody StaffDTO staffDTO) {
         try {
@@ -40,7 +33,6 @@ public class StaffController {
             return new ResponseEntity<>(null, HttpStatus.CONFLICT);
         }
     }
-
 
     @PutMapping("/update")
     public ResponseEntity<StaffDTO> updateStaff(@RequestBody StaffDTO staffDTO) {
@@ -54,15 +46,18 @@ public class StaffController {
         }
     }
 
-
     @DeleteMapping
     public  ResponseUtil deleteStaff(@RequestParam("sCode") String sCode){
         staffServiceIMPL.deleteStaff(sCode);
         logger.info("deleteStaff successfully");
         return new ResponseUtil(200,"Deleted",null);
-
     }
 
+    @GetMapping
+    public ResponseUtil getAllStaffs() {
+        logger.info("getAllStaffs successfully");
+        return new ResponseUtil(200, "OK", staffServiceIMPL.getAllCrops());
+    }
 
     @GetMapping("/nextId")
     @ResponseStatus(HttpStatus.ACCEPTED)

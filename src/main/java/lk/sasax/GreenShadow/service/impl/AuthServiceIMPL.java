@@ -1,7 +1,7 @@
 package lk.sasax.GreenShadow.service.impl;
 
-import lk.sasax.GreenShadow.dto.ReqRespDTO;
-import lk.sasax.GreenShadow.dto.UserDTO2;
+import lk.sasax.GreenShadow.dto.ResponseDTO;
+import lk.sasax.GreenShadow.dto.UserDTO;
 import lk.sasax.GreenShadow.entity.User;
 import lk.sasax.GreenShadow.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +26,8 @@ public class AuthServiceIMPL {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    public ReqRespDTO signUp(ReqRespDTO registrationRequest){
-        ReqRespDTO resp = new ReqRespDTO();
+    public ResponseDTO signUp(ResponseDTO registrationRequest){
+        ResponseDTO resp = new ResponseDTO();
         try {
             User user = new User();
             user.setEmail(registrationRequest.getEmail());
@@ -46,8 +46,8 @@ public class AuthServiceIMPL {
         return resp;
     }
 
-    public ReqRespDTO signIn(ReqRespDTO signinRequest){
-        ReqRespDTO response = new ReqRespDTO();
+    public ResponseDTO signIn(ResponseDTO signinRequest){
+        ResponseDTO response = new ResponseDTO();
 
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(signinRequest.getEmail(),signinRequest.getPassword()));
@@ -67,8 +67,8 @@ public class AuthServiceIMPL {
         return response;
     }
 
-    public ReqRespDTO refreshToken(ReqRespDTO refreshTokenReqiest){
-        ReqRespDTO response = new ReqRespDTO();
+    public ResponseDTO refreshToken(ResponseDTO refreshTokenReqiest){
+        ResponseDTO response = new ResponseDTO();
         String ourEmail = jwtServiceIMPL.extractUsername(refreshTokenReqiest.getToken());
         User users = ourUserRepo.findByEmail(ourEmail).orElseThrow();
         if (jwtServiceIMPL.isTokenValid(refreshTokenReqiest.getToken(), users)) {
@@ -85,16 +85,16 @@ public class AuthServiceIMPL {
 
 
 
-    public ReqRespDTO getAllUsers() {
-        ReqRespDTO response = new ReqRespDTO();
+    public ResponseDTO getAllUsers() {
+        ResponseDTO response = new ResponseDTO();
         try {
             List<User> usersList = ourUserRepo.findAll();
             if (usersList.isEmpty()) {
                 response.setStatusCode(404);
                 response.setMessage("No Users Found");
             } else {
-                List<UserDTO2> userDTOList = usersList.stream()
-                        .map(user -> new UserDTO2(user.getId(), user.getEmail(), user.getPassword()))
+                List<UserDTO> userDTOList = usersList.stream()
+                        .map(user -> new UserDTO(user.getId(), user.getEmail(), user.getPassword()))
                         .collect(Collectors.toList());
 
                 response.setStatusCode(200);

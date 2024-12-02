@@ -20,22 +20,13 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/crop")
-//@RequiredArgsConstructor
 @CrossOrigin
 public class CropController {
-
 
     @Autowired
     private CropServiceIMPL cropService;
 
     private static final Logger logger = LoggerFactory.getLogger(CropController.class);
-
-    @GetMapping
-    public ResponseEntity<List<CropDTO>> getAllCrops() {
-        List<CropDTO> crops = cropService.getAllCrops();
-        logger.info("Crops found successfully");
-        return ResponseEntity.ok(crops);
-    }
 
     @PostMapping
     public ResponseEntity<Crop> saveCrop(
@@ -105,7 +96,6 @@ public class CropController {
         }
     }
 
-
     @DeleteMapping
     public ResponseUtil deleteCrop(@RequestParam("cCode") String cCode){
         cropService.deleteCrop(cCode);
@@ -113,6 +103,12 @@ public class CropController {
         return new ResponseUtil(200,"Deleted",null);
     }
 
+    @GetMapping
+    public ResponseEntity<List<CropDTO>> getAllCrops() {
+        List<CropDTO> crops = cropService.getAllCrops();
+        logger.info("Crops found successfully");
+        return ResponseEntity.ok(crops);
+    }
 
     @GetMapping("/cropCode")
     public ResponseEntity<Map<String, String>> generateCropCode() {

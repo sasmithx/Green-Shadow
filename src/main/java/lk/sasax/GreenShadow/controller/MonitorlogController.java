@@ -19,12 +19,10 @@ import java.util.List;
 @RequestMapping("api/v1/log")
 public class MonitorlogController {
 
-
     @Autowired
     MonitorlogServiceIMPL monitorlogServiceIMPL;
 
     private static final Logger logger = LoggerFactory.getLogger(MonitorlogController.class);
-
 
     @PostMapping("/save")
     public ResponseEntity<Void> saveLog(@RequestBody MonitorlogDTO monitorlogDTO) {
@@ -32,7 +30,6 @@ public class MonitorlogController {
         logger.info("Log Saved Successfully");
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-
 
     @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> updateMonitoringLog(@PathVariable("id") String id, @RequestBody MonitorlogDTO monitorlogDTO, FieldDTO fieldDTO) {
@@ -44,7 +41,6 @@ public class MonitorlogController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
-
 
     @GetMapping
     public ResponseEntity<List<MonitorlogDTO>> getAllMonitoringLogs() {

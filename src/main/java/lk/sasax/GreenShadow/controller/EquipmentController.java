@@ -21,15 +21,8 @@ public class EquipmentController {
 
     private static final Logger logger = LoggerFactory.getLogger(EquipmentController.class);
 
-
-    @GetMapping
-    public ResponseUtil getAlEq() {
-        logger.info("Equipments found successfully");
-        return new ResponseUtil(200, "OK", equipmentService.getAllEquipments());
-    }
-
     @PostMapping
-    public ResponseEntity<EquipmentDTO> saveEq(@RequestBody EquipmentDTO eDTO) {
+    public ResponseEntity<EquipmentDTO> saveEquipment(@RequestBody EquipmentDTO eDTO) {
         try {
             EquipmentDTO savee = equipmentService.saveEquipment(eDTO);
             logger.info("Equipment saved successfully");
@@ -40,9 +33,8 @@ public class EquipmentController {
         }
     }
 
-
     @PutMapping("/update")
-    public ResponseEntity<EquipmentDTO> updateEq(@RequestBody EquipmentDTO eDTO) {
+    public ResponseEntity<EquipmentDTO> updateEquipment(@RequestBody EquipmentDTO eDTO) {
         try {
             equipmentService.updateEquipment(eDTO);
             logger.info("Equipment updated successfully");
@@ -53,15 +45,19 @@ public class EquipmentController {
         }
     }
 
-
     @DeleteMapping
-    public  ResponseUtil deleteEq(@RequestParam("eCode") String eCode){
+    public  ResponseUtil deleteEquipment(@RequestParam("eCode") String eCode){
         equipmentService.deleteEquipment(eCode);
         logger.info("Equipment deleted successfully");
         return new ResponseUtil(200,"Deleted",null);
 
     }
 
+    @GetMapping
+    public ResponseUtil getAlEquipments() {
+        logger.info("Equipments found successfully");
+        return new ResponseUtil(200, "OK", equipmentService.getAllEquipments());
+    }
 
     @GetMapping("/nextEId")
     @ResponseStatus(HttpStatus.ACCEPTED)

@@ -1,23 +1,16 @@
 package lk.sasax.GreenShadow.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import lk.sasax.GreenShadow.util.Enum.Role;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
-@NoArgsConstructor
-@Builder
 public class UserDTO {
-    @NotBlank(message = "Email Cannot Be Null")
-    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\n",message = "Invalid Email")
+    private Integer id;
     private String email;
-    @NotBlank(message = "Password Cannot Be Null")
     private String password;
-    private Role role;
 }

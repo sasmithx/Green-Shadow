@@ -51,31 +51,6 @@ public class FieldController {
         }
     }
 
-
-
-    @GetMapping("/generateFieldCode")
-    public ResponseEntity<String> generateFieldCode() {
-        String newFieldCode = fieldServiceIMPL.generateFieldCode();
-        logger.info("New field code generated successfully");
-        return ResponseEntity.ok(newFieldCode);
-    }
-
-    @DeleteMapping
-    public ResponseUtil deleteField(@RequestParam("fCode") String fCode){
-        fieldServiceIMPL.deleteFiled(fCode);
-        logger.info("Field deleted successfully");
-        return new ResponseUtil(200,"Deleted",null);
-
-    }
-
-
-    @GetMapping
-    public ResponseUtil getAllFields() {
-        logger.info("Get all fields successfully");
-        return new ResponseUtil(200, "OK", fieldServiceIMPL.getAllFields());
-    }
-
-
     @PutMapping("/update")
     public ResponseEntity<FieldDTO> updateField(
             @RequestParam("fieldCode") String fieldCode,
@@ -102,4 +77,24 @@ public class FieldController {
         return ResponseEntity.ok(updatedField);
     }
 
+    @DeleteMapping
+    public ResponseUtil deleteField(@RequestParam("fCode") String fCode){
+        fieldServiceIMPL.deleteFiled(fCode);
+        logger.info("Field deleted successfully");
+        return new ResponseUtil(200,"Deleted",null);
+
+    }
+
+    @GetMapping
+    public ResponseUtil getAllFields() {
+        logger.info("Get all fields successfully");
+        return new ResponseUtil(200, "OK", fieldServiceIMPL.getAllFields());
+    }
+
+    @GetMapping("/generateFieldCode")
+    public ResponseEntity<String> generateFieldCode() {
+        String newFieldCode = fieldServiceIMPL.generateFieldCode();
+        logger.info("New field code generated successfully");
+        return ResponseEntity.ok(newFieldCode);
+    }
 }

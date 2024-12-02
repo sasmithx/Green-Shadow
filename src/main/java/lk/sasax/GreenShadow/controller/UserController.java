@@ -1,6 +1,6 @@
 package lk.sasax.GreenShadow.controller;
 
-import lk.sasax.GreenShadow.dto.ReqRespDTO;
+import lk.sasax.GreenShadow.dto.ResponseDTO;
 import lk.sasax.GreenShadow.service.impl.AuthServiceIMPL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,17 +21,17 @@ public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @PostMapping("/signup")
-    public ResponseEntity<ReqRespDTO> signUp(@RequestBody ReqRespDTO signUpRequest){
+    public ResponseEntity<ResponseDTO> signUp(@RequestBody ResponseDTO signUpRequest){
         logger.info("signUp request received");
         return ResponseEntity.ok(authService.signUp(signUpRequest));
     }
     @PostMapping("/signin")
-    public ResponseEntity<ReqRespDTO> signIn(@RequestBody ReqRespDTO signInRequest){
+    public ResponseEntity<ResponseDTO> signIn(@RequestBody ResponseDTO signInRequest){
         logger.info("signIn request received");
         return ResponseEntity.ok(authService.signIn(signInRequest));
     }
     @PostMapping("/refresh")
-    public ResponseEntity<ReqRespDTO> refreshToken(@RequestBody ReqRespDTO refreshTokenRequest){
+    public ResponseEntity<ResponseDTO> refreshToken(@RequestBody ResponseDTO refreshTokenRequest){
         logger.info("refresh token request received");
         return ResponseEntity.ok(authService.refreshToken(refreshTokenRequest));
     }
