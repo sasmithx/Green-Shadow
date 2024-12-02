@@ -21740,3 +21740,114 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 2024-12-02 17:07:27,037 INFO [http-nio-8080-exec-8] lk.sasax.GreenShadow.controller.FieldController: Field updated successfully
 2024-12-02 17:07:27,051 INFO [http-nio-8080-exec-9] lk.sasax.GreenShadow.controller.FieldController: Get all fields successfully
 2024-12-02 17:07:27,057 INFO [http-nio-8080-exec-10] lk.sasax.GreenShadow.controller.FieldController: New field code generated successfully
+2024-12-02 17:09:58,817 INFO [SpringApplicationShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-02 17:09:58,824 INFO [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Graceful shutdown complete
+2024-12-02 17:09:58,829 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-02 17:09:58,831 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2024-12-02 17:09:58,841 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2024-12-02 17:10:02,992 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.1.Final
+2024-12-02 17:10:03,048 INFO [main] org.springframework.boot.StartupInfoLogger: Starting GreenShadowApplication using Java 21.0.5 with PID 22552 (C:\Users\Sasa_x\Documents\AAD-CW\GreenShadow\GreenShadow\target\classes started by Sasa_x in C:\Users\Sasa_x\Documents\AAD-CW\GreenShadow\GreenShadow)
+2024-12-02 17:10:03,048 DEBUG [main] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-02 17:10:03,049 INFO [main] org.springframework.boot.SpringApplication: The following 1 profile is active: "dev"
+2024-12-02 17:10:03,794 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-02 17:10:03,877 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 72 ms. Found 9 JPA repository interfaces.
+2024-12-02 17:10:04,365 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2024-12-02 17:10:04,377 INFO [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 17:10:04,379 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2024-12-02 17:10:04,379 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-02 17:10:04,430 INFO [main] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2024-12-02 17:10:04,431 INFO [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1338 ms
+2024-12-02 17:10:04,546 INFO [main] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-02 17:10:04,613 INFO [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-02 17:10:04,645 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2024-12-02 17:10:04,880 INFO [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-02 17:10:04,908 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2024-12-02 17:10:05,200 INFO [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ff463bb
+2024-12-02 17:10:05,202 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2024-12-02 17:10:05,245 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-02 17:10:05,246 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-12-02 17:10:05,263 INFO [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-02 17:10:06,367 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-02 17:10:06,506 INFO [main] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-02 17:10:06,775 DEBUG [main] org.springframework.web.filter.GenericFilterBean: Filter 'JWTFilter' configured for use
+2024-12-02 17:10:06,834 INFO [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-02 17:10:07,372 INFO [main] org.springframework.security.config.annotation.authentication.configuration.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer: Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-02 17:10:07,373 WARN [main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2024-12-02 17:10:07,396 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-02 17:10:07,658 WARN [main] org.springframework.web.servlet.resource.ResourceHandlerUtils: Appended trailing slash to static resource location: file:C:\Users\Sasa_x\Downloads\Upload\
+2024-12-02 17:10:07,955 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 17:10:07,972 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 17:10:07,980 INFO [main] org.springframework.boot.StartupInfoLogger: Started GreenShadowApplication in 5.306 seconds (process running for 6.14)
+2024-12-02 17:10:28,409 INFO [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-02 17:10:28,409 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2024-12-02 17:10:28,410 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2024-12-02 17:10:28,841 INFO [http-nio-8080-exec-1] lk.sasax.GreenShadow.controller.FieldController: Field saved successfully
+2024-12-02 17:10:28,907 INFO [http-nio-8080-exec-7] lk.sasax.GreenShadow.controller.FieldController: Get all fields successfully
+2024-12-02 17:10:28,914 INFO [http-nio-8080-exec-3] lk.sasax.GreenShadow.controller.FieldController: New field code generated successfully
+2024-12-02 17:11:36,808 INFO [http-nio-8080-exec-9] lk.sasax.GreenShadow.controller.FieldController: Get all fields successfully
+2024-12-02 17:11:36,812 INFO [http-nio-8080-exec-1] lk.sasax.GreenShadow.controller.EquipmentController: Equipments found successfully
+2024-12-02 17:11:36,812 INFO [http-nio-8080-exec-3] lk.sasax.GreenShadow.controller.StaffController: getAllStaffs successfully
+2024-12-02 17:11:36,814 INFO [http-nio-8080-exec-10] lk.sasax.GreenShadow.controller.EquipmentController: Next equipment code generated successfully
+2024-12-02 17:11:46,443 INFO [http-nio-8080-exec-5] lk.sasax.GreenShadow.controller.EquipmentController: Equipment updated successfully
+2024-12-02 17:11:46,458 INFO [http-nio-8080-exec-4] lk.sasax.GreenShadow.controller.EquipmentController: Equipments found successfully
+2024-12-02 17:11:46,461 INFO [http-nio-8080-exec-6] lk.sasax.GreenShadow.controller.EquipmentController: Next equipment code generated successfully
+2024-12-02 17:12:01,466 INFO [http-nio-8080-exec-2] lk.sasax.GreenShadow.controller.EquipmentController: Equipment updated successfully
+2024-12-02 17:12:01,480 INFO [http-nio-8080-exec-9] lk.sasax.GreenShadow.controller.EquipmentController: Next equipment code generated successfully
+2024-12-02 17:12:01,480 INFO [http-nio-8080-exec-8] lk.sasax.GreenShadow.controller.EquipmentController: Equipments found successfully
+2024-12-02 17:16:37,790 INFO [SpringApplicationShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-02 17:16:37,798 INFO [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Graceful shutdown complete
+2024-12-02 17:16:37,803 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-02 17:16:37,806 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2024-12-02 17:16:37,816 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2024-12-02 17:16:41,785 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.1.Final
+2024-12-02 17:16:41,841 INFO [main] org.springframework.boot.StartupInfoLogger: Starting GreenShadowApplication using Java 21.0.5 with PID 8424 (C:\Users\Sasa_x\Documents\AAD-CW\GreenShadow\GreenShadow\target\classes started by Sasa_x in C:\Users\Sasa_x\Documents\AAD-CW\GreenShadow\GreenShadow)
+2024-12-02 17:16:41,842 DEBUG [main] org.springframework.boot.StartupInfoLogger: Running with Spring Boot v3.4.0, Spring v6.2.0
+2024-12-02 17:16:41,842 INFO [main] org.springframework.boot.SpringApplication: The following 1 profile is active: "dev"
+2024-12-02 17:16:42,560 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-02 17:16:42,642 INFO [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 73 ms. Found 9 JPA repository interfaces.
+2024-12-02 17:16:43,127 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+2024-12-02 17:16:43,137 INFO [main] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-02 17:16:43,139 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2024-12-02 17:16:43,140 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-02 17:16:43,189 INFO [main] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2024-12-02 17:16:43,190 INFO [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1310 ms
+2024-12-02 17:16:43,304 INFO [main] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-02 17:16:43,372 INFO [main] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-02 17:16:43,404 INFO [main] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+2024-12-02 17:16:43,634 INFO [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-02 17:16:43,662 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2024-12-02 17:16:43,952 INFO [main] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@636e4bf8
+2024-12-02 17:16:43,955 INFO [main] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2024-12-02 17:16:43,998 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-02 17:16:43,999 WARN [main] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-12-02 17:16:44,015 INFO [main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-02 17:16:45,119 INFO [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-02 17:16:45,232 INFO [main] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-02 17:16:45,500 DEBUG [main] org.springframework.web.filter.GenericFilterBean: Filter 'JWTFilter' configured for use
+2024-12-02 17:16:45,563 INFO [main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory: Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-02 17:16:46,125 INFO [main] org.springframework.security.config.annotation.authentication.configuration.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer: Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-12-02 17:16:46,126 WARN [main] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer: Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2024-12-02 17:16:46,152 WARN [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-02 17:16:46,387 WARN [main] org.springframework.web.servlet.resource.ResourceHandlerUtils: Appended trailing slash to static resource location: file:C:\Users\Sasa_x\Downloads\Upload\
+2024-12-02 17:16:46,717 INFO [main] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2024-12-02 17:16:46,735 INFO [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+2024-12-02 17:16:46,742 INFO [main] org.springframework.boot.StartupInfoLogger: Started GreenShadowApplication in 5.266 seconds (process running for 6.088)
+2024-12-02 17:18:16,754 INFO [SpringApplicationShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-02 17:18:16,761 INFO [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Graceful shutdown complete
+2024-12-02 17:18:16,767 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-02 17:18:16,770 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2024-12-02 17:18:16,782 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
