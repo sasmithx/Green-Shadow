@@ -7,6 +7,7 @@ import lk.sasax.GreenShadow.entity.Field;
 import lk.sasax.GreenShadow.entity.MonitoringLogService;
 import lk.sasax.GreenShadow.exception.NotFoundException;
 import lk.sasax.GreenShadow.repository.*;
+import lk.sasax.GreenShadow.service.MoniterLogService;
 import lk.sasax.GreenShadow.util.Enum.UserRole;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class MonitorlogServiceIMPL {
+public class MonitorlogServiceIMPL implements MoniterLogService {
 
     @Autowired
     CropRepository cropRepo;
@@ -35,6 +36,7 @@ public class MonitorlogServiceIMPL {
     @Autowired
     private ModelMapper modelMapper;
 
+    @Override
     public void saveLog(MonitorlogDTO monitorlogDTO){
         monitorlogDTO.setLogCode(nextCode("LOG-"));
 
@@ -46,6 +48,7 @@ public class MonitorlogServiceIMPL {
 
     }
 
+    @Override
     public void updateLog(String id, MonitorlogDTO monitorlogDTO, FieldDTO fieldDTO){
         MonitoringLogService log = monitoringLogRepository.findByLogCode(id)
                 .orElseThrow(() -> new NotFoundException("Log not found"));
@@ -61,6 +64,7 @@ public class MonitorlogServiceIMPL {
 
     }
 
+    @Override
     public List<MonitorlogDTO> getAllMonitoringLogs() {
         List<MonitoringLogService> logs = monitoringLogRepository.findAll();
 
@@ -94,6 +98,7 @@ public class MonitorlogServiceIMPL {
                 .collect(Collectors.toList());
     }
 
+    @Override
     public String nextCode(String prefix) {
         long count = monitoringLogRepository.count();
         String nextInventoryCode = prefix + String.format("%03d", count + 1);

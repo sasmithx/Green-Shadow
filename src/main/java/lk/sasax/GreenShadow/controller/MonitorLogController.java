@@ -15,12 +15,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/log")
-public class MonitorlogController {
+public class MonitorLogController {
 
     @Autowired
     MonitorlogServiceIMPL monitorlogServiceIMPL;
 
-    private static final Logger logger = LoggerFactory.getLogger(MonitorlogController.class);
+    private static final Logger logger = LoggerFactory.getLogger(MonitorLogController.class);
 
     @PostMapping("/save")
     public ResponseEntity<Void> saveLog(@RequestBody MonitorlogDTO monitorlogDTO) {

@@ -18,5 +18,4 @@ public interface EquipmentService {
     String generateNextEquipmentCode() ;
 
     long getEquipmentCount();
-
 }
