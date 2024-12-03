@@ -22,11 +22,9 @@ public class CropDetailController {
     @PostMapping
     public ResponseEntity<CropDetailDTO> saveCropDetail(@RequestBody CropDetailDTO cropDetailDTO) {
         try {
-            // Calling the service to save crop details
             CropDetailDTO savedCropDetail = cropDetailService.saveCropDetail(cropDetailDTO);
             return new ResponseEntity<>(savedCropDetail, HttpStatus.CREATED);  // Return status 201 for successful creation
         } catch (IllegalArgumentException | EntityNotFoundException e) {
-            // Handle validation and entity not found exceptions
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST); // Return 400 for bad requests
         } catch (Exception e) {
             // Generic exception handler
