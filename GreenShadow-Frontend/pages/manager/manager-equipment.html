@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipment</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css"> -->
+
+    <!-- Font Awesome -->
+    <script
+            src="https://kit.fontawesome.com/f6b40d3bdc.js"
+            crossorigin="anonymous"
+    ></script>
+
+    <!-- Common Styles -->
+    <link href="../../assets/style/common.css" rel="stylesheet" />
+    <link href="../../assets/style/content.css" rel="stylesheet" />
+
+    <!-- Unique Styles -->
+    <link href="../../assets/style/manager/manager-equipment.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo-menu">
+        <!--    <h3 class="text-center text-white mb-4" id="logo">MENU</h3>-->
+        <h2 class="logo">Menu</h2>
+    </div>
+    <ul class="nav flex-column" id="list">
+        <li class="nav-item active">
+            <a class="nav-link active" href="#" id="btnDash">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span class="link-name" style="--i:1">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fas fa-users"></i>
+                <span class="link-name" style="--i:3">Staff</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnCrop">
+                <i class="fa-brands fa-pagelines"></i>
+                <span class="link-name" style="--i:4">crop</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnEquipment">
+                <i class="fa-solid fa-trowel"></i>
+                <span class="link-name" style="--i:6">Equipment</span>
+            </a>
+
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnEmail">
+                <i class="fas fa-envelope"></i>
+                <span class="link-name" style="--i:7">Email</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLog">
+                <i class="fas fa-info-circle"></i>
+                <span class="link-name" style="--i:8">Log</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnUser">
+                <i class="fas fa-user"></i>
+                <span class="link-name">  User</span>
+
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLogout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="link-name">Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--    END OF SIDE BAR-->
+
+<div class="container">
+    <div class="container">
+        <h2 class="text-center mt-3 mb-4" style="background-color: black; color: white" >Equipment</h2>
+        <!-- Form for Equipment Entry -->
+        <form id="equipmentForm">
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="equipmentId">Equipment ID</label>
+                    <input type="text" class="form-control" id="equipmentId" name="equipmentId" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="name1">Name</label>
+                    <input type="text" class="form-control" id="name1" name="name" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="type">Type</label>
+                    <select class="form-control" id="type" name="type" required>
+                        <option value="ELECTRICAL">ELECTRICAL</option>
+                        <option value="MECHANICAL">MECHANICAL</option>
+
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="status1">Status</label>
+                    <select class="form-control" id="status1" name="status" required>
+                        <option value="AVAILABLE">AVAILABLE</option>
+                        <option value="NOT">NOT</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" name="equantity" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-3">
+                    <label for="assignedStaffId">Assigned Staff</label>
+                    <select class="form-control" id="assignedStaffId" name="assignedStaffId" required>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="assignedFieldCode">Assigned Field Code</label>
+                    <select class="form-control" id="assignedFieldCode" name="assignedFieldCode" required>
+                    </select>
+                </div>
+
+                <div class="row-md-4 mt-2 mb-4">
+                    <button type="button" class="btn btn-dark mt-4" id="saveEq">SAVE</button>
+                    <!-- Update Equipment Button -->
+                    <button type="button" class="btn btn-dark mt-4" id="updateEq">UPDATE</button>
+
+                    <!-- Delete Equipment Button -->
+                    <button type="button" class="btn btn-dark mt-4" id="deleteEq">DELETE</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Table to display equipment data -->
+        <div class="table-container">
+<!--            <h3>Equipment List</h3>-->
+            <table class="table table-bordered" id="eqTable">
+                <thead>
+                <tr>
+                    <th>Equipment ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Quantity</th>
+                    <th>Assigned Staff</th>
+                    <th>Assigned Field Code</th>
+                </tr>
+                </thead>
+                <tbody id="equipmentTableBody">
+                <!-- Dynamic rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- Common JS -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/common.js"></script>
+
+<!-- Unique JS -->
+<script src="../../assets/js/manager/manager-equipment.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>

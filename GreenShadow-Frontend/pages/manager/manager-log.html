@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOG</title>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css"> -->
+
+    <!-- Font Awesome -->
+    <script
+            src="https://kit.fontawesome.com/f6b40d3bdc.js"
+            crossorigin="anonymous"
+    ></script>
+
+    <!-- Common Styles -->
+    <link href="../../assets/style/common.css" rel="stylesheet" />
+    <link href="../../assets/style/content.css" rel="stylesheet" />
+
+    <!-- Unique Styles -->
+    <link href="../../assets/style/manager/manager-crop.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo-menu">
+        <!--    <h3 class="text-center text-white mb-4" id="logo">MENU</h3>-->
+        <h2 class="logo">Menu</h2>
+    </div>
+    <ul class="nav flex-column" id="list">
+        <li class="nav-item active">
+            <a class="nav-link active" href="#" id="btnDash">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span class="link-name" style="--i:1">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fas fa-users"></i>
+                <span class="link-name" style="--i:3">Staff</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnCrop">
+                <i class="fa-brands fa-pagelines"></i>
+                <span class="link-name" style="--i:4">crop</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnEquipment">
+                <i class="fa-solid fa-trowel"></i>
+                <span class="link-name" style="--i:6">Equipment</span>
+            </a>
+
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnEmail">
+                <i class="fas fa-envelope"></i>
+                <span class="link-name" style="--i:7">Email</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLog">
+                <i class="fas fa-info-circle"></i>
+                <span class="link-name" style="--i:8">Log</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnUser">
+                <i class="fas fa-user"></i>
+                <span class="link-name">  User</span>
+
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLogout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="link-name">Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--    END OF SIDE BAR-->
+
+
+<div class="container">
+    <h2 class="text-center mb-4 mt-3" style="background-color: black; color: white" >Moniter Log</h2>
+
+    <button type="button" class="btn btn-dark w-25" id="navLog">Logs</button>
+    <button type="button" class="btn btn-dark w-25" id="navCrop">Crop Details</button>
+
+    <section id="log-page" class="container-fluid mt-3">
+        <div class="row justify-content-around">
+            <div class="form-group row">
+            <!-- Log Code -->
+            <div class="col-md-4 w-25">
+                <label for="logCode">Log Code</label>
+                <input type="text" class="form-control" id="logCode"  name="logCode" required>
+            </div>
+
+                <!-- Log Date -->
+                <div class="col-md-3 mb-3">
+                    <label for="logDate">Log Date</label>
+                    <input type="date" class="form-control" id="logDate" name="logDate" required>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+            <!-- Log Details -->
+            <div class="col-md-4" style="width: 500px">
+                <label for="logDetail">Log Details</label>
+                <input type="text" class="form-control" id="logDetail"  name="logDetail" required>
+            </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4 w-25">
+                    <label for="role">Role</label>
+<!--                    <input type="text" class="form-control" id="role"  name="role" required>-->
+                    <select class="form-control" id="role" name="role">
+<!--                        <option>Select Role</option>-->
+                        <!-- Populate options dynamically -->
+                        <option value="ADMINISTRATIVE">ADMINISTRATIVE</option>
+                        <option value="MANAGER">MANAGER</option>
+                        <option value="SCIENTIST">SCIENTIST</option>
+                       <!-- <option value="OTHER">OTHER</option>-->
+                    </select>
+                </div>
+
+                <!-- Field Code -->
+                <div class="col-md-4 w-25">
+                    <label for="fieldCode">Field Code</label>
+<!--                    <input type="text" class="form-control" id="fieldCode"  name="fieldCode" required>-->
+                    <select class="form-control" id="fieldCode" name="fieldCode">
+                        <option>Select Field</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--<div class="row-md-4 mt-4 mb-4" style="padding-left: 25px">
+                &lt;!&ndash; Submit Button &ndash;&gt;
+                <button type="submit" class="btn btn-dark" id="saveLogBtn">SAVE</button>
+                <button type="button" class="btn btn-dark" id="updateLogBtn">UPDATE</button>
+                <button type="button" class="btn btn-dark" id="deleteLogBtn">DELETE</button>
+            </div>-->
+        </div>
+
+
+        <table class="table table-bordered table-striped table-hover" id="logTable" style="margin-top: 20px">
+            <thead class="table-header">
+            <tr>
+                <th scope="col">Log Code</th>
+                <th scope="col">Log Date</th>
+                <th scope="col">Log Details</th>
+                <th scope="col">Role</th>
+                <th scope="col">Field Code</th>
+
+            </tr>
+            </thead>
+            <tbody id="tblLog">
+            <!-- JavaScript will populate rows here -->
+            </tbody>
+        </table>
+
+    </section>
+
+
+    <section id="crop-page" class="container-fluid mt-3">
+
+        <div class="form-group row">
+
+            <!-- Crop Code -->
+            <div class="col-md-4 w-25">
+                <label for="cropCode">Crop Code</label>
+                <select class="form-control" id="cropCode" name="cropCode">
+                    <option>Select Crop</option>
+                </select>
+            </div>
+
+            <!-- Staff Code -->
+            <div class="col-md-4 w-25">
+                <label for="staffCode">Staff Code</label>
+                <!--                    <input type="text" class="form-control" id="staffCode"  name="staffCode" required>-->
+                <select class="form-control" id="staffCode" name="staffCode">
+                    <option>Select Staff</option>
+                </select>
+            </div>
+
+            <!-- Crop Qty -->
+            <div class="col-md-4 w-25">
+                <label for="cropQty">Crop Quantity</label>
+                <input type="text" class="form-control" id="cropQty"  name="cropQty" required>
+            </div>
+
+
+            <div class="col-md-4 w-25">
+                <label for="staffCount">Staff count</label>
+                <input type="text" class="form-control" id="staffCount"  name="staffCount" required>
+            </div>
+        </div>
+
+        <div class="row-md-4 mt-4 mb-4">
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-dark" id="addCrop">ADD CROP CART</button>
+<!--            <button type="submit" class="btn btn-dark" id="viewCrop">VIEW CROP CART</button>-->
+            <button type="button" class="btn btn-dark" id="saveCrop">SAVE</button>
+        </div>
+
+        <section id="cart">
+        <h3 class="text-center mb-4 mt-3" style="background-color: black; color: white" >Crop Detail Cart</h3>
+
+        <table class="table table-bordered table-striped table-hover"  style="margin-top: 20px">
+            <thead class="table-header">
+            <tr>
+                <th scope="col">Crop Code</th>
+                <th scope="col">Staff Code</th>
+                <th scope="col">Crop Quantity</th>
+                <th scope="col">Staff Count</th>
+            </tr>
+            </thead>
+            <tbody id="tableDetails">
+            </tbody>
+        </table>
+        </section>
+
+        <h3 class="text-center mb-4 mt-3" style="background-color: black; color: white" >Crop Details</h3>
+        <table class="table table-bordered table-striped table-hover" id="cropTable" style="margin-top: 20px">
+            <thead class="table-header">
+            <tr>
+                <th scope="col">Log Code</th>
+                <th scope="col">Crop Code</th>
+                <th scope="col">Staff Code</th>
+                <th scope="col">Crop Quantity</th>
+                <th scope="col">Staff Count</th>
+            </tr>
+            </thead>
+            <tbody id="tblCropDetails">
+            </tbody>
+        </table>
+
+    </section>
+
+
+
+</div>
+
+
+<!-- Common JS -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/common.js"></script>
+
+<!-- Unique JS -->
+<script src="../../assets/js/manager/manager-log.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</body>
+</html>

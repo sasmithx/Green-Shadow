@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css"> -->
+
+    <!-- Font Awesome -->
+    <script
+            src="https://kit.fontawesome.com/f6b40d3bdc.js"
+            crossorigin="anonymous"
+    ></script>
+
+    <!-- Common Styles -->
+    <link href="../../assets/style/common.css" rel="stylesheet" />
+    <link href="../../assets/style/content.css" rel="stylesheet" />
+
+    <!-- Unique Styles -->
+    <link href="../../assets/style/manager/manager-email.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+
+
+<div class="sidebar">
+    <div class="logo-menu">
+        <!--    <h3 class="text-center text-white mb-4" id="logo">MENU</h3>-->
+        <h2 class="logo">Menu</h2>
+    </div>
+    <ul class="nav flex-column" id="list">
+        <li class="nav-item active">
+            <a class="nav-link active" href="#" id="btnDash">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span class="link-name" style="--i:1">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fas fa-users"></i>
+                <span class="link-name" style="--i:3">Staff</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnCrop">
+                <i class="fa-brands fa-pagelines"></i>
+                <span class="link-name" style="--i:4">crop</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnEquipment">
+                <i class="fa-solid fa-trowel"></i>
+                <span class="link-name" style="--i:6">Equipment</span>
+            </a>
+
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnEmail">
+                <i class="fas fa-envelope"></i>
+                <span class="link-name" style="--i:7">Email</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLog">
+                <i class="fas fa-info-circle"></i>
+                <span class="link-name" style="--i:8">Log</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnUser">
+                <i class="fas fa-user"></i>
+                <span class="link-name">  User</span>
+
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLogout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="link-name">Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--    END OF SIDE BAR-->
+
+<div class="container">
+    <h2 class="text-center mb-4 mt-3" style="background-color: black; color: white" >Email</h2>
+
+    <div class="container contact-container">
+        <div class="row align-items-center g-4">
+            <!-- Form Section -->
+            <div class="col-lg-6" style="margin-top: -100px">
+                <div class="form-container">
+                    <!--<h2 class="mb-4">Send Mail For Participant</h2>-->
+                    <h3 class="text-center mb-4 mt-3" style="background-color: black; color: white;" >Send Mail For Participant</h3>
+                    <form id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="mt-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-custom w-100">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Image Section -->
+            <div class="col-lg-6" style="margin-top: -100px">
+                <div class="image-container">
+                    <img src="../../assets/img/Background.jpg" alt="Decorative greenery">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Common JS -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="../../assets/js/sidebar.js"></script>
+<script src="../../assets/js/common.js"></script>
+
+<!-- Unique JS -->
+<script src="../../assets/js/manager/manager-email.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>

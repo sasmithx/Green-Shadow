@@ -1,0 +1,20 @@
+/*.content {*/
+/*  margin-left: 100px;*/
+/*  padding: 10px;*/
+/*  width: 100%;*/
+/*}*/
+
+/* Content section */
+.content {
+    margin-left: 80px; /* default margin for non-active sidebar */
+    padding: 20px;
+    width: calc(100% - 80px); /* Make sure the content fits correctly with sidebar */
+    overflow: hidden; /* Prevent overflow if necessary */
+}
+
+/* When the sidebar is active, adjust the margin */
+.sidebar.active + .content {
+    margin-left: 260px; /* margin for active sidebar */
+    width: calc(100% - 260px); /* Make sure content fits correctly */
+}
+

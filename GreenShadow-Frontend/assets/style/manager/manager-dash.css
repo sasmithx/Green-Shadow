@@ -1,0 +1,210 @@
+/* General Container Styling */
+.container-fluid {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+h3.h4 {
+    font-size: 1.8rem;
+    color: #343a40;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #000000, #5f605f);
+    color: #ffffff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-header p {
+    margin: 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #e0e0e0;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.icon i {
+    opacity: 0.8;
+}
+
+/* Horizontal Line Styling */
+.hr {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #e0e0e0, transparent);
+}
+
+/* Card Footer */
+.card-footer {
+    padding: 15px;
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+}
+
+.card-footer span {
+    font-weight: bold;
+}
+
+.card-footer .text-success {
+    color: #28a745;
+}
+
+.card-footer .text-danger {
+    color: #dc3545;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-header h4 {
+        font-size: 1.3rem;
+    }
+
+    .card-footer {
+        text-align: center;
+    }
+}
+
+
+.desc{
+    padding-top: 100px;
+    padding-left: 120px;
+}
+
+.cardDesc{
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card h1 {
+    font-size: 1.8rem;
+    color: #343a40;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+.card button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+
+
+/*Chart*/
+
+.bar-chart{
+    padding-top: 100px;
+    padding-left: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.simple-bar-chart{
+    --line-count: 10;
+    --line-color: black;
+    --line-opacity: 0.25;
+    --item-gap: 2%;
+    --item-default-color: #060606;
+
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--item-gap);
+    align-items: end;
+    padding-inline: var(--item-gap);
+    --padding-block: 1.5rem; /*space for labels*/
+    padding-block: var(--padding-block);
+    position: relative;
+    /*isolation: isolate;*/
+    width: 800px;
+    height: 400px;
+}
+
+.simple-bar-chart::after{
+    content: "";
+    position: absolute;
+    inset: var(--padding-block) 0;
+    z-index: -1;
+    --line-width: 1px;
+    --line-spacing: calc(100% / var(--line-count));
+    background-image: repeating-linear-gradient(to top, transparent 0 calc(var(--line-spacing) - var(--line-width)), var(--line-color) 0 var(--line-spacing));
+    box-shadow: 0 var(--line-width) 0 var(--line-color);
+    opacity: var(--line-opacity);
+}
+.simple-bar-chart > .item{
+    height: calc(10% * var(--val));
+    background-color: var(--clr, var(--item-default-color));
+    position: relative;
+    animation: item-height 1s ease forwards
+}
+@keyframes item-height { from { height: 0 } }
+
+.simple-bar-chart > .item > * { position: absolute; text-align: center }
+.simple-bar-chart > .item > .label { inset: 100% 0 auto 0 }
+.simple-bar-chart > .item > .value { inset: auto 0 100% 0 }
+
+

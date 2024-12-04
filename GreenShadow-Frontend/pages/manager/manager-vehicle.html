@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <!-- <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.css"> -->
+
+  <!-- Font Awesome -->
+  <script
+    src="https://kit.fontawesome.com/f6b40d3bdc.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Common Styles -->
+  <link href="../../assets/style/common.css" rel="stylesheet" />
+  <link href="../../assets/style/content.css" rel="stylesheet" />
+
+  <!-- Unique Styles -->
+  <link href="../../assets/style/manager/manager-vehicle.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo-menu">
+        <!--    <h3 class="text-center text-white mb-4" id="logo">MENU</h3>-->
+        <h2 class="logo">Menu</h2>
+    </div>
+    <ul class="nav flex-column" id="list">
+        <li class="nav-item active">
+            <a class="nav-link active" href="#" id="btnDash">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span class="link-name" style="--i:1">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fas fa-users"></i>
+                <span class="link-name" style="--i:3">Staff</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnCrop">
+                <i class="fa-brands fa-pagelines"></i>
+                <span class="link-name" style="--i:4">crop</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="btnEquipment">
+                <i class="fa-solid fa-trowel"></i>
+                <span class="link-name" style="--i:6">Equipment</span>
+            </a>
+
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnEmail">
+                <i class="fas fa-envelope"></i>
+                <span class="link-name" style="--i:7">Email</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLog">
+                <i class="fas fa-info-circle"></i>
+                <span class="link-name" style="--i:8">Log</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnUser">
+                <i class="fas fa-user"></i>
+                <span class="link-name">  User</span>
+
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="btnLogout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span class="link-name">Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--    END OF SIDE BAR-->
+
+    <div class="container" id="vehicleSection">
+        <div class="container mt-3">
+            <h2 class="text-center mb-4" style="background-color: black; color: white" >Vehicle</h2>
+
+            <!-- Form for Vehicle Details -->
+            <form id="vehicleForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3" id="vcodecss" >
+                        <label for="vehicleCode">Vehicle Code</label>
+                        <input type="text" class="form-control" id="vehicleCode" name="vehicleCode" required>
+                        <i></i>
+                    </div>
+
+                    <div class="col-md-6 mb-3" id="lnmbcss">
+
+                        <label for="licensePlateNumber">License Plate Number </label>
+                        <input type="text" class="form-control" id="licensePlateNumber" name="licensePlateNumber" required>
+
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="vehicleCategory">Vehicle Category</label>
+                        <select class="form-control" id="vehicleCategory" name="vehicleCategory">
+                            <option>Select Category</option>
+                            <!-- Populate options dynamically -->
+                            <option value="CAR">CAR</option>
+                            <option value="TRUCK">TRUCK</option>
+                            <option value="TRACTOR">TRACTOR</option>
+                            <option value="VAN">VAN</option>
+                            <option value="SUV">SUV</option>
+                            <option value="CRANE">CRANE</option>
+                            <option value="ATV">ATV</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="fuelType">Fuel Type</label>
+                        <select class="form-control" id="fuelType" name="fuelType">
+                            <option>Select Fuel Type</option>
+                            <!-- Populate options dynamically -->
+                            <option value="PETROL">PETROL</option>
+                            <option value="DIESEL">DIESEL</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="status">Status</label>
+                        <select class="form-control" id="status" name="status">
+                            <option>Select Status</option>
+                            <!-- Populate options dynamically -->
+                            <option value="AVAILABLE">AVAILABLE</option>
+                            <option value="NOT">NOT</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="allocatedStaffId">Allocated Staff ID</label>
+                        <select class="form-control" id="allocatedStaffId" name="allocatedStaffId">
+                            <option>Select Staff</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="remarks">Remarks</label>
+                        <input type="text" class="form-control" id="remarks" name="remarks" placeholder="Enter remarks">
+                    </div>
+                </div>
+                <div class="row-md-4 mt-3 mb-4">
+                <button type="button" class="btn btn-dark" id="saveVbtn">SAVE</button>
+                <!--            <button type="button" class="btn btn-outline-secondary">Secondary</button>-->
+                <button type="button" class="btn btn-dark" id="updateVbtn">UPDATE</button>
+                <button type="button" class="btn btn-dark" id="deleteVbtn">DELETE</button>
+<!--                <button type="button" class="btn btn-info" id="clearVbtn">CLEAR</button>-->
+                </div>
+            </form>
+
+            <!-- Table for displaying vehicle details -->
+            <table class="table table-bordered table-striped mt-5" id="vTable">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Vehicle Code</th>
+                    <th>License Plate Number</th>
+                    <th>Vehicle Category</th>
+                    <th>Fuel Type</th>
+                    <th>Status</th>
+                    <th>Allocated Staff ID</th>
+                    <th>Remarks</th>
+                </tr>
+                </thead>
+                <tbody id="vTbody">
+                <!-- Sample row, dynamically populate rows based on data -->
+                <tr>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+  <!-- Common JS -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="../../assets/js/sidebar.js"></script>
+  <script src="../../assets/js/common.js"></script>
+
+  <!-- Unique JS -->
+  <script src="../../assets/js/manager/manager-vehicle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
