@@ -80,6 +80,11 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/equipment/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
 
 
+                        .requestMatchers(HttpMethod.GET, "/api/v1/crop_detail/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
+                        // Restrict ADMINISTRATIVE AND MANAGER  from performing POST, PUT, DELETE on /api/v2/crop/** (they can only view with GET)
+                        .requestMatchers(HttpMethod.POST, "/api/v1/crop_detail/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/crop_detail/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/crop_detail/**").hasAnyAuthority("MANAGER","ADMINISTRATIVE")
 
 
 

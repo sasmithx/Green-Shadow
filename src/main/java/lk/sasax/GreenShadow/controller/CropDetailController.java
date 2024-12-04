@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/crop_detail")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class CropDetailController {
     private final CropDetailService cropDetailService;
 
@@ -23,12 +23,11 @@ public class CropDetailController {
     public ResponseEntity<CropDetailDTO> saveCropDetail(@RequestBody CropDetailDTO cropDetailDTO) {
         try {
             CropDetailDTO savedCropDetail = cropDetailService.saveCropDetail(cropDetailDTO);
-            return new ResponseEntity<>(savedCropDetail, HttpStatus.CREATED);  // Return status 201 for successful creation
+            return new ResponseEntity<>(savedCropDetail, HttpStatus.CREATED);
         } catch (IllegalArgumentException | EntityNotFoundException e) {
-            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST); // Return 400 for bad requests
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
-            // Generic exception handler
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);  // Return 500 for server errors
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

@@ -1,4 +1,4 @@
-package lk.sasax.GreenShadow.entity;
+package lk.sasax.GreenShadow.embedded;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

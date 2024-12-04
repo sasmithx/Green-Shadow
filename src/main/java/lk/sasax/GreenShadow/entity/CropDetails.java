@@ -1,6 +1,7 @@
 package lk.sasax.GreenShadow.entity;
 
 import jakarta.persistence.*;
+import lk.sasax.GreenShadow.embedded.Monitoring_Pk;
 import lombok.Data;
 
 @Entity
@@ -17,15 +18,15 @@ public class CropDetails {
     private int membersInStaff;
 
     @ManyToOne
-    @JoinColumn(name = "logCode",referencedColumnName = "logCode")
+    @JoinColumn(name = "logCode",referencedColumnName = "logCode",insertable = false,updatable = false)
     private MonitoringLogService logService;
 
     @ManyToOne
-    @JoinColumn(name = "staff_id")
+    @JoinColumn(name = "staff_id",insertable = false,updatable = false)
     private Staff staff;
 
     @ManyToOne
-    @JoinColumn(name = "crop_code")
+    @JoinColumn(name = "crop_code",insertable = false,updatable = false)
     private Crop crop;
 
 }

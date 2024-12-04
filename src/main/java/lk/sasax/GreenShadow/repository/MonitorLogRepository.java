@@ -7,9 +7,6 @@ import java.util.Optional;
 
 public interface MonitorLogRepository extends JpaRepository<MonitoringLogService,String> {
 
-    Boolean existsByLogCode(String monitoringLogId);
-
     Optional<MonitoringLogService> findByLogCode(String logCode);
 
-    Optional<MonitoringLogService> findTopByOrderByLogCodeDesc();
 }
