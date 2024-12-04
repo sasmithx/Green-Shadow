@@ -1,14 +1,11 @@
 package lk.sasax.GreenShadow.controller;
 
 import lk.sasax.GreenShadow.dto.CropDetailDTO;
-import lk.sasax.GreenShadow.dto.FieldDTO;
 import lk.sasax.GreenShadow.dto.MonitorlogDTO;
 import lk.sasax.GreenShadow.service.impl.MonitorlogServiceIMPL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -22,21 +19,13 @@ public class MonitorLogController {
 
     private static final Logger logger = LoggerFactory.getLogger(MonitorLogController.class);
 
-    @PostMapping("/save")
-    public ResponseEntity<Void> saveLog(@RequestBody MonitorlogDTO monitorlogDTO) {
-        monitorlogServiceIMPL.saveLog(monitorlogDTO);
-        logger.info("Log Saved Successfully");
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-    }
-
-    @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> updateMonitoringLog(@PathVariable("id") String id, @RequestBody MonitorlogDTO monitorlogDTO, FieldDTO fieldDTO) {
+    @PostMapping("/update")
+    public ResponseEntity<String> updateMonitoringLog(@RequestBody MonitorlogDTO monitorlogDTO) {
         try {
-            monitorlogServiceIMPL.updateLog(id,monitorlogDTO,fieldDTO);
-            return ResponseEntity.status(HttpStatus.OK).build();
+            monitorlogServiceIMPL.updateMonitoringLog(monitorlogDTO);
+            return ResponseEntity.ok("Monitoring log updated successfully.");
         } catch (IllegalArgumentException e) {
-            logger.error("Error updating Monitoring log", e);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return ResponseEntity.badRequest().body("Error: " + e.getMessage());
         }
     }
 

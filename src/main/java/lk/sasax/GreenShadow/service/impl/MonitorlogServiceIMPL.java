@@ -3,8 +3,7 @@ package lk.sasax.GreenShadow.service.impl;
 import lk.sasax.GreenShadow.dto.CropDetailDTO;
 import lk.sasax.GreenShadow.dto.FieldDTO;
 import lk.sasax.GreenShadow.dto.MonitorlogDTO;
-import lk.sasax.GreenShadow.entity.Field;
-import lk.sasax.GreenShadow.entity.MonitoringLogService;
+import lk.sasax.GreenShadow.entity.*;
 import lk.sasax.GreenShadow.exception.NotFoundException;
 import lk.sasax.GreenShadow.repository.*;
 import lk.sasax.GreenShadow.service.MoniterLogService;
@@ -12,7 +11,10 @@ import lk.sasax.GreenShadow.util.Enum.UserRole;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,7 +38,7 @@ public class MonitorlogServiceIMPL implements MoniterLogService {
     @Autowired
     private ModelMapper modelMapper;
 
-    @Override
+    /*@Override
     public void saveLog(MonitorlogDTO monitorlogDTO){
         monitorlogDTO.setLogCode(nextCode("LOG-"));
 
@@ -46,9 +48,9 @@ public class MonitorlogServiceIMPL implements MoniterLogService {
             System.out.println("Log not saved");
         }
 
-    }
+    }*/
 
-    @Override
+    /*@Override
     public void updateLog(String id, MonitorlogDTO monitorlogDTO, FieldDTO fieldDTO){
         MonitoringLogService log = monitoringLogRepository.findByLogCode(id)
                 .orElseThrow(() -> new NotFoundException("Log not found"));
@@ -62,7 +64,88 @@ public class MonitorlogServiceIMPL implements MoniterLogService {
 
         monitoringLogRepository.save(modelMapper.map(log, MonitoringLogService.class));
 
+    }*/
+
+
+    @Transactional
+    public void updateMonitoringLog(MonitorlogDTO monitorlogDTO) {
+        // If logCode is not provided, generate a new one
+        if (monitorlogDTO.getLogCode() == null || monitorlogDTO.getLogCode().isEmpty()) {
+            monitorlogDTO.setLogCode(nextCode("LOG-"));
+        }
+
+        // Fetch the Field entity using the fieldCode
+        Field field = fieldRepo.findById(monitorlogDTO.getFieldCode())
+                .orElseThrow(() -> new IllegalArgumentException("Field not found"));
+
+        // Check if the MonitoringLogService entity already exists; if not, create a new one
+        MonitoringLogService logService = monitoringLogRepository.findById(monitorlogDTO.getLogCode())
+                .orElseGet(() -> {
+                    // Create a new logService if it does not exist
+                    MonitoringLogService newLogService = new MonitoringLogService();
+                    newLogService.setLogCode(monitorlogDTO.getLogCode());
+                    newLogService.setLogDate(monitorlogDTO.getLogDate());
+                    newLogService.setLogDetails(monitorlogDTO.getLogDetails());
+                    newLogService.setRole(UserRole.valueOf(monitorlogDTO.getRole()));
+                    newLogService.setField(field);  // Set the Field object here
+                    // Initialize the cropDetails list if it's null
+                    newLogService.setCropDetails(new ArrayList<>());
+                    // Save the new MonitoringLogService entity
+                    monitoringLogRepository.save(newLogService);
+                    return newLogService;
+                });
+
+        // Iterate through each CropDetailDTO to update the crop quantity and staff quantity
+        for (CropDetailDTO cropDetailDTO : monitorlogDTO.getCropDetails()) {
+            // Find Crop and Staff entities by their codes
+            Crop crop = cropRepo.findById(cropDetailDTO.getCropCode())
+                    .orElseThrow(() -> new IllegalArgumentException("Crop not found"));
+
+            Staff staff = staffRepository.findById(cropDetailDTO.getStaffId())
+                    .orElseThrow(() -> new IllegalArgumentException("Staff not found"));
+
+            // Update the crop quantity (decrease it)
+            int updatedCropQuantity = crop.getQty() - cropDetailDTO.getQuantity();
+            if (updatedCropQuantity < 0) {
+                throw new IllegalArgumentException("Not enough crop quantity available");
+            }
+            crop.setQty(updatedCropQuantity);
+
+            // Update the staff quantity (decrease the number of members)
+            int updatedStaffMembers = staff.getMembers() - cropDetailDTO.getMembersInStaff();
+            if (updatedStaffMembers < 0) {
+                throw new IllegalArgumentException("Not enough staff members available");
+            }
+            staff.setMembers(updatedStaffMembers);
+
+            // Save updated entities back to the database
+            cropRepo.save(crop);
+            staffRepository.save(staff);
+
+            // Optionally, create a new CropDetails record
+            CropDetails cropDetails = new CropDetails();
+            cropDetails.setLogCode(logService.getLogCode());  // Set logCode from logService
+            cropDetails.setCrop_code(cropDetailDTO.getCropCode());
+            cropDetails.setStaff_id(cropDetailDTO.getStaffId());
+            cropDetails.setQuantity(cropDetailDTO.getQuantity());
+            cropDetails.setMembersInStaff(cropDetailDTO.getMembersInStaff());
+
+            // Set the log service reference
+            cropDetails.setLogService(logService);
+
+            // Save the cropDetails entry to the database
+            cropDetailRepo.save(cropDetails);  // Assuming you have a cropDetailsRepo
+
+            // Add CropDetails to the MonitoringLogService entity
+            logService.getCropDetails().add(cropDetails);
+        }
+
+        // Save the updated MonitoringLogService (this ensures the logCode and related data are saved)
+        monitoringLogRepository.save(logService);  // Save the MonitoringLogService to the DB
     }
+
+
+
 
     @Override
     public List<MonitorlogDTO> getAllMonitoringLogs() {
