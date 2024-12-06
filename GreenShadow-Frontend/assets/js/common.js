@@ -1,5 +1,3 @@
-
-// Function to show the corresponding section and hide others
 const sidebar =document.querySelector('.sidebar');
 
 
@@ -40,23 +38,10 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  $("#btnUser").click(function () {
-    window.location.href = "../../pages/manager/manager-user.html"; // Navigate to Page 2
-  });
-});
-
-$(document).ready(function () {
   $("#btnLog").click(function () {
     window.location.href = "../../pages/manager/manager-log.html"; // Navigate to Page 2
   });
 });
-
-$(document).ready(function () {
-  $("#btnEmail").click(function () {
-    window.location.href = "../../pages/manager/manager-email.html"; // Navigate to Page 2
-  });
-});
-
 
 $(document).ready(function () {
   $("#btnLogout").click(function () {

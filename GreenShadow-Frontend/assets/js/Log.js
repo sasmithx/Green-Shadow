@@ -33,8 +33,8 @@ $("#loginForm").on("submit", function(event) {
                 // Show success alert with SweetAlert
                 Swal.fire({
                     icon: 'success',
-                    title: 'Login Successful!',
-                    text: 'You are now logged in.',
+                    title: 'Credentials are matched!',
+                    text: 'WELCOME TO GREEN SHADOW!',
                     //confirmButtonText: 'Proceed',
                     //timer: 2000 // Optionally, set a timer to auto close the alert
                 }).then(() => {

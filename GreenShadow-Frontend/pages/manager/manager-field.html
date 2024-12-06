@@ -51,17 +51,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnField">
-                <i class="fas fa-shapes"></i>
-                <span class="link-name" style="--i:2">Field</span>
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnStaff">
-                <i class="fas fa-users"></i>
-                <span class="link-name" style="--i:3">Staff</span>
-            </a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link active" href="#" id="btnCrop">
                 <i class="fa-brands fa-pagelines"></i>
@@ -69,9 +64,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#" id="btnVehicle">
-                <i class="fa-solid fa-tractor"></i>
-                <span class="link-name" style="--i:5">Vehicle</span>
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fa-solid fa-users-between-lines"></i>
+                <span class="link-name" style="--i:3">Staff</span>
             </a>
         </li>
         <li class="nav-item">
@@ -79,27 +74,20 @@
                 <i class="fa-solid fa-trowel"></i>
                 <span class="link-name" style="--i:6">Equipment</span>
             </a>
-
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnEmail">
-                <i class="fas fa-envelope"></i>
-                <span class="link-name" style="--i:7">Email</span>
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLog">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-list"></i>
                 <span class="link-name" style="--i:8">Log</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnUser">
-                <i class="fas fa-user"></i>
-                <span class="link-name">  User</span>
 
-            </a>
-        </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLogout">
                 <i class="fas fa-sign-out-alt"></i>
@@ -113,7 +101,7 @@
 
 
 <div class="container">
-    <h2 class="text-center mb-4 mt-3" style="background-color: black; color: white" >Field</h2>
+    <h2 class="text-center mb-4 mt-3" style="background-color: #5d755d; color: white" >Field</h2>
     <!-- Your Filed Section Content Goes Here -->
     <div class="container">
         <!-- Form Header -->
@@ -124,15 +112,15 @@
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="fieldCode" class="form-label">Field Code</label>
-                    <input type="text" class="form-control" id="fieldCode" name="fieldCode" placeholder="Enter Field Code">
+                    <input type="text" class="form-control" style="background-color: #558e55" id="fieldCode" name="fieldCode" placeholder="Enter Field Code">
                 </div>
                 <div class="col-md-4">
                     <label for="fieldName" class="form-label">Field Name</label>
-                    <input type="text" class="form-control" id="fieldName" name="fieldName" placeholder="Enter Field Name">
+                    <input type="text" class="form-control" style="background-color: #558e55" id="fieldName" name="fieldName">
                 </div>
                 <div class="col-md-4">
                     <label for="fieldLocation" class="form-label">Field Location</label>
-                    <input type="text" class="form-control" id="fieldLocation" name="fieldLocation" placeholder="Enter Field Location">
+                    <input type="text" class="form-control" style="background-color: #558e55" id="fieldLocation" name="fieldLocation">
                 </div>
             </div>
 
@@ -140,17 +128,17 @@
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="size" class="form-label">Size</label>
-                    <input type="number" class="form-control" id="size" name="size" placeholder="Enter Size">
+                    <input type="number" class="form-control" style="background-color: #558e55" id="size" name="size">
                 </div>
                 <div class="col-md-4">
                     <label for="cropCode" class="form-label">Crop Code</label>
-                    <select class="form-control" id="cropCode" name="cropCode">
+                    <select class="form-control" style="background-color: #558e55" id="cropCode" name="cropCode">
                         <option value="">Select CROP ID</option>
                     </select>
                 </div>
                 <div class="col-md-4">
                     <label for="nameOfCrop" class="form-label">Crop Name</label>
-                    <input type="text" class="form-control" id="nameOfCrop" name="nameOfCrop" placeholder="Enter Crop Name">
+                    <input type="text" class="form-control" style="background-color: #558e55" id="nameOfCrop" name="nameOfCrop">
                 </div>
             </div>
 
@@ -158,21 +146,21 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="staffId" class="form-label">Staff ID</label>
-                    <select class="form-control" id="staffId" name="staffId">
+                    <select class="form-control" style="background-color: #558e55" id="staffId" name="staffId">
                         <option value="">Select Staff ID</option>
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label for="fieldImage1" class="form-label">Field Image</label>
-                    <input type="file" class="form-control file-input" id="fieldImage1" name="fieldImageFile" accept="image/*">
+                    <input type="file" class="form-control file-input" style="background-color: #558e55" id="fieldImage1" name="fieldImageFile" accept="image/*">
                 </div>
             </div>
 
             <div class="row-md-4 mt-4 mb-4">
-            <button type="submit" class="btn btn-dark" id="savefieldbtn">SAVE</button>
+            <button type="submit" class="btn btn-dark" style="background-color: #5d755d" id="savefieldbtn">SAVE</button>
             <!--            <button type="button" class="btn btn-outline-secondary">Secondary</button>-->
-            <button type="button" class="btn btn-dark" id="updatefields">UPDATE</button>
-            <button type="button" class="btn btn-dark" id="deleteFiled">DELETE</button>
+            <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="updatefields">UPDATE</button>
+            <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="deleteFiled">DELETE</button>
             </div>
         </form>
 

@@ -55,11 +55,11 @@ public class AuthServiceIMPL {
             System.out.println("USER IS: "+ user);
             var jwt = jwtServiceIMPL.generateToken(user);
             var refreshToken = jwtServiceIMPL.generateRefreshToken(new HashMap<>(), user);
-            response.setStatusCode(200);
+            response.setStatusCode(201);
             response.setToken(jwt);
-            response.setRefreshToken(refreshToken);
-            response.setExpirationTime("24Hr");
-            response.setMessage("Successfully Signed In");
+//            response.setRefreshToken(refreshToken);
+            /*response.setExpirationTime("24Hr");
+            response.setMessage("Successfully Signed In");*/
         }catch (Exception e){
             response.setStatusCode(500);
             response.setError(e.getMessage());

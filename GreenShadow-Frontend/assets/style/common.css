@@ -1,24 +1,14 @@
-body{
-    /*min-height: 100vh;*/
-    /* background: url("../images/sunny-meadow-landscape.jpg");*/
-    /* background-size: cover;*/
-    /* background-position: center;*/
-}
 .sidebar{
     position: fixed;
     top: 0;
     left: 0;
     width: 80px;
     height: 100%;
-    /*background: url("../images/ultra-detailed-nebula-abstract-wallpaper-3.jpg");*/
-    /*background-size: cover;*/
-    /*background-position: center;*/
-    background: black;
+    background: #5d755d;
     backdrop-filter: blur(40px);
     border-right: 2px solid rgba(255,255,255,.2);
     padding: 6px 14px;
     box-shadow: 0 0 14px;
-    /*padding: 6px 14px;*/
     transition: .5s;
 }
 

@@ -51,17 +51,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnField">
-                <i class="fas fa-shapes"></i>
-                <span class="link-name" style="--i:2">Field</span>
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnStaff">
-                <i class="fas fa-users"></i>
-                <span class="link-name" style="--i:3">Staff</span>
-            </a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link active" href="#" id="btnCrop">
                 <i class="fa-brands fa-pagelines"></i>
@@ -69,9 +64,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#" id="btnVehicle">
-                <i class="fa-solid fa-tractor"></i>
-                <span class="link-name" style="--i:5">Vehicle</span>
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fa-solid fa-users-between-lines"></i>
+                <span class="link-name" style="--i:3">Staff</span>
             </a>
         </li>
         <li class="nav-item">
@@ -79,27 +74,20 @@
                 <i class="fa-solid fa-trowel"></i>
                 <span class="link-name" style="--i:6">Equipment</span>
             </a>
-
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnEmail">
-                <i class="fas fa-envelope"></i>
-                <span class="link-name" style="--i:7">Email</span>
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLog">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-list"></i>
                 <span class="link-name" style="--i:8">Log</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnUser">
-                <i class="fas fa-user"></i>
-                <span class="link-name">  User</span>
 
-            </a>
-        </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLogout">
                 <i class="fas fa-sign-out-alt"></i>
@@ -113,21 +101,21 @@
 
 <div class="container">
     <div class="container">
-        <h2 class="text-center mt-3 mb-4" style="background-color: black; color: white" >Equipment</h2>
+        <h2 class="text-center mt-3 mb-4" style="background-color: #5d755d;  color: white" >Equipment</h2>
         <!-- Form for Equipment Entry -->
         <form id="equipmentForm">
             <div class="row">
                 <div class="col-md-3">
                     <label for="equipmentId">Equipment ID</label>
-                    <input type="text" class="form-control" id="equipmentId" name="equipmentId" required>
+                    <input type="text" class="form-control" style="background-color: #558e55" id="equipmentId" name="equipmentId" required>
                 </div>
                 <div class="col-md-3">
                     <label for="name1">Name</label>
-                    <input type="text" class="form-control" id="name1" name="name" required>
+                    <input type="text" class="form-control" style="background-color: #558e55" id="name1" name="name" required>
                 </div>
                 <div class="col-md-2">
                     <label for="type">Type</label>
-                    <select class="form-control" id="type" name="type" required>
+                    <select class="form-control" style="background-color: #558e55" id="type" name="type" required>
                         <option value="ELECTRICAL">ELECTRICAL</option>
                         <option value="MECHANICAL">MECHANICAL</option>
 
@@ -135,35 +123,35 @@
                 </div>
                 <div class="col-md-2">
                     <label for="status1">Status</label>
-                    <select class="form-control" id="status1" name="status" required>
+                    <select class="form-control" style="background-color: #558e55" id="status1" name="status" required>
                         <option value="AVAILABLE">AVAILABLE</option>
                         <option value="NOT">NOT</option>
                     </select>
                 </div>
                 <div class="col-md-2">
                     <label for="quantity">Quantity</label>
-                    <input type="number" class="form-control" id="quantity" name="equantity" required>
+                    <input type="number" class="form-control" style="background-color: #558e55" id="quantity" name="equantity" required>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-md-3">
                     <label for="assignedStaffId">Assigned Staff</label>
-                    <select class="form-control" id="assignedStaffId" name="assignedStaffId" required>
+                    <select class="form-control" style="background-color: #558e55" id="assignedStaffId" name="assignedStaffId" required>
                     </select>
                 </div>
                 <div class="col-md-3">
                     <label for="assignedFieldCode">Assigned Field Code</label>
-                    <select class="form-control" id="assignedFieldCode" name="assignedFieldCode" required>
+                    <select class="form-control" style="background-color: #558e55" id="assignedFieldCode" name="assignedFieldCode" required>
                     </select>
                 </div>
 
                 <div class="row-md-4 mt-2 mb-4">
-                    <button type="button" class="btn btn-dark mt-4" id="saveEq">SAVE</button>
+                    <button type="button" class="btn btn-dark mt-4" style="background-color: #5d755d" id="saveEq">SAVE</button>
                     <!-- Update Equipment Button -->
-                    <button type="button" class="btn btn-dark mt-4" id="updateEq">UPDATE</button>
+                    <button type="button" class="btn btn-dark mt-4" style="background-color: #5d755d" id="updateEq">UPDATE</button>
 
                     <!-- Delete Equipment Button -->
-                    <button type="button" class="btn btn-dark mt-4" id="deleteEq">DELETE</button>
+                    <button type="button" class="btn btn-dark mt-4" style="background-color: #5d755d" id="deleteEq">DELETE</button>
                 </div>
             </div>
         </form>

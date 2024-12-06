@@ -47,10 +47,10 @@
 2024-12-01 07:07:44,575 INFO [http-nio-8080-exec-1] lk.sasax.GreenShadow.controller.FieldController: Get all fields successfully
 2024-12-01 07:08:40,958 INFO [http-nio-8080-exec-2] lk.sasax.GreenShadow.controller.FieldController: New field code generated successfully
 2024-12-01 07:10:05,467 INFO [http-nio-8080-exec-5] lk.sasax.GreenShadow.controller.HealthTestController: Health Test Success , Green Shadow App Run Successfully
-2024-12-01 07:17:51,402 ERROR [http-nio-8080-exec-8] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSAVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSAVA
+2024-12-01 07:17:51,402 ERROR [http-nio-8080-exec-8] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSAVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSAVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
-	at lk.sasax.GreenShadow.util.Enum.CropComnName.valueOf(CropComnName.java:3)
+	at lk.sasax.GreenShadow.util.Enum.CropCommonName.valueOf(CropComnName.java:3)
 	at lk.sasax.GreenShadow.service.impl.CropServiceIMPL.saveCrop(CropServiceIMPL.java:60)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -164,10 +164,10 @@ java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.E
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-12-01 07:18:13,689 ERROR [http-nio-8080-exec-6] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSAVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSAVA
+2024-12-01 07:18:13,689 ERROR [http-nio-8080-exec-6] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSAVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSAVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
-	at lk.sasax.GreenShadow.util.Enum.CropComnName.valueOf(CropComnName.java:3)
+	at lk.sasax.GreenShadow.util.Enum.CropCommonName.valueOf(CropComnName.java:3)
 	at lk.sasax.GreenShadow.service.impl.CropServiceIMPL.saveCrop(CropServiceIMPL.java:60)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -281,10 +281,10 @@ java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.E
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-12-01 07:18:34,815 ERROR [http-nio-8080-exec-10] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSAVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSAVA
+2024-12-01 07:18:34,815 ERROR [http-nio-8080-exec-10] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSAVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSAVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
-	at lk.sasax.GreenShadow.util.Enum.CropComnName.valueOf(CropComnName.java:3)
+	at lk.sasax.GreenShadow.util.Enum.CropCommonName.valueOf(CropComnName.java:3)
 	at lk.sasax.GreenShadow.service.impl.CropServiceIMPL.saveCrop(CropServiceIMPL.java:60)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
@@ -587,8 +587,8 @@ java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.E
 2024-12-01 08:08:44,941 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
 2024-12-01 08:08:44,943 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
 2024-12-01 08:08:45,485 INFO [http-nio-8080-exec-6] lk.sasax.GreenShadow.controller.FieldController: Get all fields successfully
-2024-12-01 08:08:45,576 ERROR [http-nio-8080-exec-4] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA
+2024-12-01 08:08:45,576 ERROR [http-nio-8080-exec-4] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
 	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:259)
 	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:127)
@@ -751,8 +751,8 @@ java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.E
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-12-01 08:08:45,576 ERROR [http-nio-8080-exec-6] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA
+2024-12-01 08:08:45,576 ERROR [http-nio-8080-exec-6] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
 	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:259)
 	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:127)
@@ -1044,8 +1044,8 @@ java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.E
 2024-12-01 08:10:19,312 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
 2024-12-01 08:10:19,314 INFO [http-nio-8080-exec-1] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 2 ms
 2024-12-01 08:10:19,905 INFO [http-nio-8080-exec-5] lk.sasax.GreenShadow.controller.FieldController: Get all fields successfully
-2024-12-01 08:10:19,963 ERROR [http-nio-8080-exec-2] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA
+2024-12-01 08:10:19,963 ERROR [http-nio-8080-exec-2] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
 	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:259)
 	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:127)
@@ -1208,8 +1208,8 @@ java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.E
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-12-01 08:10:19,963 ERROR [http-nio-8080-exec-5] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA
+2024-12-01 08:10:19,963 ERROR [http-nio-8080-exec-5] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
 	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:259)
 	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:127)
@@ -1456,8 +1456,8 @@ java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.E
 2024-12-01 08:13:28,784 INFO [http-nio-8080-exec-5] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
 2024-12-01 08:13:28,786 INFO [http-nio-8080-exec-5] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 2 ms
 2024-12-01 08:13:29,322 INFO [http-nio-8080-exec-5] lk.sasax.GreenShadow.controller.FieldController: Get all fields successfully
-2024-12-01 08:13:29,416 ERROR [http-nio-8080-exec-4] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA
+2024-12-01 08:13:29,416 ERROR [http-nio-8080-exec-4] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
 	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:259)
 	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:127)
@@ -1620,8 +1620,8 @@ java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.E
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-12-01 08:13:29,416 ERROR [http-nio-8080-exec-5] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSSVA
+2024-12-01 08:13:29,416 ERROR [http-nio-8080-exec-5] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.InvalidDataAccessApiUsageException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSSVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
 	at org.hibernate.type.descriptor.java.EnumJavaType.fromName(EnumJavaType.java:259)
 	at org.hibernate.type.descriptor.java.EnumJavaType.wrap(EnumJavaType.java:127)
@@ -2684,10 +2684,10 @@ java.sql.SQLException: Data truncated for column 'crop_scientific_name' at row 1
 2024-12-01 08:32:45,388 INFO [http-nio-8080-exec-9] lk.sasax.GreenShadow.controller.FieldController: Get all fields successfully
 2024-12-01 08:32:45,397 INFO [http-nio-8080-exec-2] lk.sasax.GreenShadow.controller.CropController: Crop generated successfully
 2024-12-01 08:32:45,398 INFO [http-nio-8080-exec-8] lk.sasax.GreenShadow.controller.CropController: Crops found successfully
-2024-12-01 08:33:05,963 ERROR [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSAVA] with root cause
-java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropComnName.CASSAVA
+2024-12-01 08:33:05,963 ERROR [http-nio-8080-exec-1] org.apache.juli.logging.DirectJDKLog: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSAVA] with root cause
+java.lang.IllegalArgumentException: No enum constant lk.sasax.GreenShadow.util.Enum.CropCommonName.CASSAVA
 	at java.base/java.lang.Enum.valueOf(Enum.java:293)
-	at lk.sasax.GreenShadow.util.Enum.CropComnName.valueOf(CropComnName.java:3)
+	at lk.sasax.GreenShadow.util.Enum.CropCommonName.valueOf(CropComnName.java:3)
 	at lk.sasax.GreenShadow.service.impl.CropServiceIMPL.saveCrop(CropServiceIMPL.java:60)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)

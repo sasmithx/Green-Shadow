@@ -3,14 +3,13 @@ package lk.sasax.GreenShadow.service.impl;
 import jakarta.persistence.EntityNotFoundException;
 import lk.sasax.GreenShadow.dto.CropDTO;
 import lk.sasax.GreenShadow.entity.Crop;
-import lk.sasax.GreenShadow.exception.NotFoundException;
 import lk.sasax.GreenShadow.repository.CropRepository;
 import lk.sasax.GreenShadow.service.CropService;
 import lk.sasax.GreenShadow.util.Enum.CropCategory;
-import lk.sasax.GreenShadow.util.Enum.CropComnName;
+import lk.sasax.GreenShadow.util.Enum.CropCommonName;
 import lk.sasax.GreenShadow.util.Enum.CropScienceName;
 import lk.sasax.GreenShadow.util.Enum.CropSesasons;
-import lk.sasax.GreenShadow.util.handle.FileUploader;
+import lk.sasax.GreenShadow.util.handle.ImageHandle;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,20 +30,20 @@ public class CropServiceIMPL implements CropService {
     private ModelMapper modelMapper;
 
     @Autowired
-    FileUploader fileUploader;
+    ImageHandle imageHandle;
 
     @Transactional
     @Override
     public Crop saveCrop(CropDTO cropDTO) throws IOException {
         String cropImage = null;
         if (cropDTO.getCropImage() != null && !cropDTO.getCropImage().isEmpty()) {
-            cropImage = fileUploader.storeFile(cropDTO.getCropImage());
+            cropImage = imageHandle.storeFile(cropDTO.getCropImage());
         }
 
         String generatedCropCode = generateCropCode();
         Crop crop = new Crop();
         crop.setCropCode(generatedCropCode);
-        crop.setCropCommonName(CropComnName.valueOf(cropDTO.getCropCommonName()));
+        crop.setCropCommonName(CropCommonName.valueOf(cropDTO.getCropCommonName()));
         crop.setCropScientificName(CropScienceName.valueOf(cropDTO.getCropScientificName()));
         crop.setCategory(CropCategory.valueOf(cropDTO.getCategory()));
         crop.setQty(cropDTO.getQty());
@@ -62,7 +61,7 @@ public class CropServiceIMPL implements CropService {
                 .orElseThrow(() -> new EntityNotFoundException("Crop not found : " + cropCode));
 
         Optional.ofNullable(cropDTO.getCropCommonName())
-                .ifPresent(name -> crop.setCropCommonName(CropComnName.valueOf(name)));
+                .ifPresent(name -> crop.setCropCommonName(CropCommonName.valueOf(name)));
         Optional.ofNullable(cropDTO.getCropScientificName())
                 .ifPresent(name -> crop.setCropScientificName(CropScienceName.valueOf(name)));
         Optional.ofNullable(cropDTO.getCategory())
@@ -76,7 +75,7 @@ public class CropServiceIMPL implements CropService {
                 .filter(image -> !image.isEmpty())
                 .ifPresent(image -> {
                     try {
-                        crop.setCropImage(fileUploader.storeFile(image));
+                        crop.setCropImage(imageHandle.storeFile(image));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

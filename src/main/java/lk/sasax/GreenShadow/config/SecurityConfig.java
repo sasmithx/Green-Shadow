@@ -38,9 +38,7 @@ public class SecurityConfig {
 
                         .requestMatchers("/api/v1/auth/**", "/public/**").permitAll()
 
-
                         .requestMatchers( "/api/v1/manage/**","/api/v1/log/**").hasAnyAuthority("MANAGER")
-                        .requestMatchers("/api/v1/email/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER" ,"SCIENTIST")
 
                         .requestMatchers(HttpMethod.GET, "/api/v1/crop/**").hasAnyAuthority("ADMINISTRATIVE","MANAGER","SCIENTIST")
                         .requestMatchers(HttpMethod.POST, "/api/v1/crop/**").hasAnyAuthority("MANAGER","SCIENTIST")

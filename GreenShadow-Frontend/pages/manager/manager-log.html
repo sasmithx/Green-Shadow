@@ -52,15 +52,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnField">
-                <i class="fas fa-shapes"></i>
-                <span class="link-name" style="--i:2">Field</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnStaff">
-                <i class="fas fa-users"></i>
-                <span class="link-name" style="--i:3">Staff</span>
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
             </a>
         </li>
         <li class="nav-item">
@@ -70,9 +64,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#" id="btnVehicle">
-                <i class="fa-solid fa-tractor"></i>
-                <span class="link-name" style="--i:5">Vehicle</span>
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fa-solid fa-users-between-lines"></i>
+                <span class="link-name" style="--i:3">Staff</span>
             </a>
         </li>
         <li class="nav-item">
@@ -80,27 +74,20 @@
                 <i class="fa-solid fa-trowel"></i>
                 <span class="link-name" style="--i:6">Equipment</span>
             </a>
-
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnEmail">
-                <i class="fas fa-envelope"></i>
-                <span class="link-name" style="--i:7">Email</span>
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLog">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-list"></i>
                 <span class="link-name" style="--i:8">Log</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnUser">
-                <i class="fas fa-user"></i>
-                <span class="link-name">  User</span>
 
-            </a>
-        </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLogout">
                 <i class="fas fa-sign-out-alt"></i>
@@ -114,24 +101,24 @@
 
 
 <div class="container">
-    <h2 class="text-center mb-4 mt-3" style="background-color: black; color: white" >Moniter Log</h2>
+    <h2 class="text-center mb-4 mt-3" style="background-color: #5d755d; color: white" >Moniter Log</h2>
 
-    <button type="button" class="btn btn-dark w-25" id="navLog">Logs</button>
-    <button type="button" class="btn btn-dark w-25" id="navCrop">Crop Details</button>
+    <button type="button" class="btn btn-dark w-25" style="background-color: #5d755d" id="navLog">Logs</button>
+    <button type="button" class="btn btn-dark w-25" style="background-color: #5d755d" id="navCrop">Crop Details</button>
 
-    <section id="log-page" class="container-fluid mt-3">
+    <section id="log-page"  class="container-fluid mt-3">
         <div class="row justify-content-around">
             <div class="form-group row">
             <!-- Log Code -->
             <div class="col-md-4 w-25">
                 <label for="logCode">Log Code</label>
-                <input type="text" class="form-control" id="logCode"  name="logCode" required>
+                <input type="text" class="form-control" style="background-color: #558e55" id="logCode"  name="logCode" required>
             </div>
 
                 <!-- Log Date -->
                 <div class="col-md-3 mb-3">
                     <label for="logDate">Log Date</label>
-                    <input type="date" class="form-control" id="logDate" name="logDate" required>
+                    <input type="date" class="form-control" style="background-color: #558e55" id="logDate" name="logDate" required>
                 </div>
 
             </div>
@@ -140,7 +127,7 @@
             <!-- Log Details -->
             <div class="col-md-4" style="width: 500px">
                 <label for="logDetail">Log Details</label>
-                <input type="text" class="form-control" id="logDetail"  name="logDetail" required>
+                <input type="text" class="form-control" style="background-color: #558e55" id="logDetail"  name="logDetail" required>
             </div>
             </div>
 
@@ -148,7 +135,7 @@
                 <div class="col-md-4 w-25">
                     <label for="role">Role</label>
 <!--                    <input type="text" class="form-control" id="role"  name="role" required>-->
-                    <select class="form-control" id="role" name="role">
+                    <select class="form-control" style="background-color: #558e55" id="role" name="role">
 <!--                        <option>Select Role</option>-->
                         <!-- Populate options dynamically -->
                         <option value="ADMINISTRATIVE">ADMINISTRATIVE</option>
@@ -162,18 +149,11 @@
                 <div class="col-md-4 w-25">
                     <label for="fieldCode">Field Code</label>
 <!--                    <input type="text" class="form-control" id="fieldCode"  name="fieldCode" required>-->
-                    <select class="form-control" id="fieldCode" name="fieldCode">
+                    <select class="form-control" style="background-color: #558e55" id="fieldCode" name="fieldCode">
                         <option>Select Field</option>
                     </select>
                 </div>
             </div>
-
-            <!--<div class="row-md-4 mt-4 mb-4" style="padding-left: 25px">
-                &lt;!&ndash; Submit Button &ndash;&gt;
-                <button type="submit" class="btn btn-dark" id="saveLogBtn">SAVE</button>
-                <button type="button" class="btn btn-dark" id="updateLogBtn">UPDATE</button>
-                <button type="button" class="btn btn-dark" id="deleteLogBtn">DELETE</button>
-            </div>-->
         </div>
 
 
@@ -203,7 +183,7 @@
             <!-- Crop Code -->
             <div class="col-md-4 w-25">
                 <label for="cropCode">Crop Code</label>
-                <select class="form-control" id="cropCode" name="cropCode">
+                <select class="form-control" style="background-color: #558e55" id="cropCode" name="cropCode">
                     <option>Select Crop</option>
                 </select>
             </div>
@@ -212,7 +192,7 @@
             <div class="col-md-4 w-25">
                 <label for="staffCode">Staff Code</label>
                 <!--                    <input type="text" class="form-control" id="staffCode"  name="staffCode" required>-->
-                <select class="form-control" id="staffCode" name="staffCode">
+                <select class="form-control" style="background-color: #558e55" id="staffCode" name="staffCode">
                     <option>Select Staff</option>
                 </select>
             </div>
@@ -220,41 +200,22 @@
             <!-- Crop Qty -->
             <div class="col-md-4 w-25">
                 <label for="cropQty">Crop Quantity</label>
-                <input type="text" class="form-control" id="cropQty"  name="cropQty" required>
+                <input type="text" class="form-control" style="background-color: #558e55" id="cropQty"  name="cropQty" required>
             </div>
 
 
             <div class="col-md-4 w-25">
                 <label for="staffCount">Staff count</label>
-                <input type="text" class="form-control" id="staffCount"  name="staffCount" required>
+                <input type="text" class="form-control" style="background-color: #558e55" id="staffCount"  name="staffCount" required>
             </div>
         </div>
 
         <div class="row-md-4 mt-4 mb-4">
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-dark" id="addCrop">ADD CROP CART</button>
-<!--            <button type="submit" class="btn btn-dark" id="viewCrop">VIEW CROP CART</button>-->
-            <button type="button" class="btn btn-dark" id="saveCrop">SAVE</button>
+            <button type="submit" class="btn btn-dark" style="background-color: #5d755d" id="addCrop">SEND</button>
+            <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="saveCrop">SAVE</button>
         </div>
 
-        <section id="cart">
-        <h3 class="text-center mb-4 mt-3" style="background-color: black; color: white" >Crop Detail Cart</h3>
 
-        <table class="table table-bordered table-striped table-hover"  style="margin-top: 20px">
-            <thead class="table-header">
-            <tr>
-                <th scope="col">Crop Code</th>
-                <th scope="col">Staff Code</th>
-                <th scope="col">Crop Quantity</th>
-                <th scope="col">Staff Count</th>
-            </tr>
-            </thead>
-            <tbody id="tableDetails">
-            </tbody>
-        </table>
-        </section>
-
-        <h3 class="text-center mb-4 mt-3" style="background-color: black; color: white" >Crop Details</h3>
         <table class="table table-bordered table-striped table-hover" id="cropTable" style="margin-top: 20px">
             <thead class="table-header">
             <tr>

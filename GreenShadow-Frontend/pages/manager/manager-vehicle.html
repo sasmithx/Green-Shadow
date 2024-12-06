@@ -51,17 +51,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnField">
-                <i class="fas fa-shapes"></i>
-                <span class="link-name" style="--i:2">Field</span>
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnStaff">
-                <i class="fas fa-users"></i>
-                <span class="link-name" style="--i:3">Staff</span>
-            </a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link active" href="#" id="btnCrop">
                 <i class="fa-brands fa-pagelines"></i>
@@ -69,9 +64,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#" id="btnVehicle">
-                <i class="fa-solid fa-tractor"></i>
-                <span class="link-name" style="--i:5">Vehicle</span>
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fa-solid fa-users-between-lines"></i>
+                <span class="link-name" style="--i:3">Staff</span>
             </a>
         </li>
         <li class="nav-item">
@@ -79,27 +74,20 @@
                 <i class="fa-solid fa-trowel"></i>
                 <span class="link-name" style="--i:6">Equipment</span>
             </a>
-
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnEmail">
-                <i class="fas fa-envelope"></i>
-                <span class="link-name" style="--i:7">Email</span>
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLog">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-list"></i>
                 <span class="link-name" style="--i:8">Log</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnUser">
-                <i class="fas fa-user"></i>
-                <span class="link-name">  User</span>
 
-            </a>
-        </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLogout">
                 <i class="fas fa-sign-out-alt"></i>
@@ -113,28 +101,28 @@
 
     <div class="container" id="vehicleSection">
         <div class="container mt-3">
-            <h2 class="text-center mb-4" style="background-color: black; color: white" >Vehicle</h2>
+            <h2 class="text-center mb-4" style="background-color: #5d755d; color: white" >Vehicle</h2>
 
             <!-- Form for Vehicle Details -->
             <form id="vehicleForm">
                 <div class="row">
                     <div class="col-md-6 mb-3" id="vcodecss" >
                         <label for="vehicleCode">Vehicle Code</label>
-                        <input type="text" class="form-control" id="vehicleCode" name="vehicleCode" required>
+                        <input type="text" class="form-control" style="background-color: #558e55" id="vehicleCode" name="vehicleCode" required>
                         <i></i>
                     </div>
 
                     <div class="col-md-6 mb-3" id="lnmbcss">
 
                         <label for="licensePlateNumber">License Plate Number </label>
-                        <input type="text" class="form-control" id="licensePlateNumber" name="licensePlateNumber" required>
+                        <input type="text" class="form-control" style="background-color: #558e55" id="licensePlateNumber" name="licensePlateNumber" required>
 
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="vehicleCategory">Vehicle Category</label>
-                        <select class="form-control" id="vehicleCategory" name="vehicleCategory">
+                        <select class="form-control" id="vehicleCategory" style="background-color: #558e55" name="vehicleCategory">
                             <option>Select Category</option>
                             <!-- Populate options dynamically -->
                             <option value="CAR">CAR</option>
@@ -148,7 +136,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="fuelType">Fuel Type</label>
-                        <select class="form-control" id="fuelType" name="fuelType">
+                        <select class="form-control" id="fuelType" style="background-color: #558e55" name="fuelType">
                             <option>Select Fuel Type</option>
                             <!-- Populate options dynamically -->
                             <option value="PETROL">PETROL</option>
@@ -157,7 +145,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="status">Status</label>
-                        <select class="form-control" id="status" name="status">
+                        <select class="form-control" id="status" style="background-color: #558e55" name="status">
                             <option>Select Status</option>
                             <!-- Populate options dynamically -->
                             <option value="AVAILABLE">AVAILABLE</option>
@@ -168,20 +156,20 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="allocatedStaffId">Allocated Staff ID</label>
-                        <select class="form-control" id="allocatedStaffId" name="allocatedStaffId">
+                        <select class="form-control" id="allocatedStaffId" style="background-color: #558e55" name="allocatedStaffId">
                             <option>Select Staff</option>
                         </select>
                     </div>
                     <div class="form-group col-md-8">
                         <label for="remarks">Remarks</label>
-                        <input type="text" class="form-control" id="remarks" name="remarks" placeholder="Enter remarks">
+                        <input type="text" class="form-control" id="remarks" style="background-color: #558e55" name="remarks">
                     </div>
                 </div>
                 <div class="row-md-4 mt-3 mb-4">
-                <button type="button" class="btn btn-dark" id="saveVbtn">SAVE</button>
+                <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="saveVbtn">SAVE</button>
                 <!--            <button type="button" class="btn btn-outline-secondary">Secondary</button>-->
-                <button type="button" class="btn btn-dark" id="updateVbtn">UPDATE</button>
-                <button type="button" class="btn btn-dark" id="deleteVbtn">DELETE</button>
+                <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="updateVbtn">UPDATE</button>
+                <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="deleteVbtn">DELETE</button>
 <!--                <button type="button" class="btn btn-info" id="clearVbtn">CLEAR</button>-->
                 </div>
             </form>

@@ -139,7 +139,7 @@ $('#deleteVbtn').click(function (){
         Swal.fire({
             icon: 'error',
             title: 'Error',
-            text: 'Vcode code is required to delete a field.'
+            text: 'Vehicle code code is required to delete a field.'
         });
         return;
     }
@@ -170,7 +170,7 @@ $('#deleteVbtn').click(function (){
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'Vehcile to delete the field. Please try again.'
+                text: 'Cannot delete the field. Please try again.'
             });
         }
     });
@@ -216,27 +216,6 @@ $('#updateVbtn').click(function() {
     });
 });
 
-
-
-
-$(document).ready(function() {
-
-    const licensePrefixes = {
-        CAR: "CAR-1234",
-        TRUCK: "TRU-1234",
-        TRACTOR: "TRA-1234",
-        VAN: "VAN-1234",
-        SUV: "SUV-1234",
-        CRANE: "CRA-1234",
-        ATV:"ATV-1234",
-    };
-
-    $("#vehicleCategory").change(function() {
-        const selectedCategory = $(this).val();
-        const licensePlate = licensePrefixes[selectedCategory] || "";
-        $("#licensePlateNumber").val(licensePlate);
-    });
-});
 
 function btnRowClickV() {
     $('#vTable').on('click', 'tr', function() {

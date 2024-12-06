@@ -20,7 +20,7 @@ public class VehicleDTO {
     private VehicleTypes vehicleCategory;
     @Pattern(regexp = "^(PETROL|DIESEL)$\n",message = "Invalid Fuel Type")
     private Fuel fuelType;
-    @Pattern(regexp = "^(AVAILABLE|NOT)$\n",message = "Invalid Satatus")
+    @Pattern(regexp = "^(AVAILABLE|NOT)$\n",message = "Invalid Status")
     private Status status;
     @Pattern(regexp = "^ST-\\d{3}$\n",message = "Invalid Staff Id")
     private String allocatedStaffId;

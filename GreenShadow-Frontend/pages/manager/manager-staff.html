@@ -50,17 +50,12 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnField">
-                <i class="fas fa-shapes"></i>
-                <span class="link-name" style="--i:2">Field</span>
+            <a class="nav-link active" href="#" id="btnVehicle">
+                <i class="fa-solid fa-tractor"></i>
+                <span class="link-name" style="--i:5">Vehicle</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnStaff">
-                <i class="fas fa-users"></i>
-                <span class="link-name" style="--i:3">Staff</span>
-            </a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link active" href="#" id="btnCrop">
                 <i class="fa-brands fa-pagelines"></i>
@@ -68,9 +63,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#" id="btnVehicle">
-                <i class="fa-solid fa-tractor"></i>
-                <span class="link-name" style="--i:5">Vehicle</span>
+            <a class="nav-link" href="#" id="btnStaff">
+                <i class="fa-solid fa-users-between-lines"></i>
+                <span class="link-name" style="--i:3">Staff</span>
             </a>
         </li>
         <li class="nav-item">
@@ -78,27 +73,20 @@
                 <i class="fa-solid fa-trowel"></i>
                 <span class="link-name" style="--i:6">Equipment</span>
             </a>
-
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" id="btnEmail">
-                <i class="fas fa-envelope"></i>
-                <span class="link-name" style="--i:7">Email</span>
+            <a class="nav-link" href="#" id="btnField">
+                <i class="fas fa-shapes"></i>
+                <span class="link-name" style="--i:2">Field</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLog">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-list"></i>
                 <span class="link-name" style="--i:8">Log</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" id="btnUser">
-                <i class="fas fa-user"></i>
-                <span class="link-name">  User</span>
 
-            </a>
-        </li>
         <li class="nav-item">
             <a class="nav-link" href="#" id="btnLogout">
                 <i class="fas fa-sign-out-alt"></i>
@@ -119,7 +107,7 @@
     <!-- Your User Section Content Goes Here -->
     <div class="container">
         <div class="container-fluid mt-3">
-            <h2 class="text-center mb-4" style="background-color: black; color: white" >Staff</h2>
+            <h2 class="text-center mb-4" style="background-color: #5d755d; color: white" >Staff</h2>
             <form id="staffForm">
                 <!-- Personal Information Section -->
                 <div class="form-section">
@@ -127,25 +115,25 @@
                         <!-- Staff ID -->
                         <div class="col-md-3 mb-3">
                             <label for="staffId1">Staff ID</label>
-                            <input type="text" class="form-control" id="staffId1" name="staffId" readonly>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="staffId1" name="staffId" readonly>
                         </div>
 
                         <!-- First Name -->
                         <div class="col-md-3 mb-3">
                             <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="firstName" name="firstName" required>
                         </div>
 
                         <!-- Last Name -->
                         <div class="col-md-3 mb-3">
                             <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="lastName" name="lastName" required>
                         </div>
 
                         <!-- Designation -->
                         <div class="col-md-3 mb-3">
                             <label for="designation">Designation</label>
-                            <input type="text" class="form-control" id="designation" name="designation" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="designation" name="designation" required>
                         </div>
                     </div>
 
@@ -153,7 +141,7 @@
                         <!-- Gender -->
                         <div class="col-md-3 mb-3">
                             <label for="gender">Gender</label>
-                            <select class="form-control" id="gender" name="gender">
+                            <select class="form-control" style="background-color: #558e55" id="gender" name="gender">
                                 <option value="MALE">Male</option>
                                 <option value="FEMALE">Female</option>
                             </select>
@@ -162,19 +150,19 @@
                         <!-- Joined Date -->
                         <div class="col-md-3 mb-3">
                             <label for="joinedDate">Joined Date</label>
-                            <input type="date" class="form-control" id="joinedDate" name="joinedDate" required>
+                            <input type="date" class="form-control" style="background-color: #558e55" id="joinedDate" name="joinedDate" required>
                         </div>
 
                         <!-- Date of Birth -->
                         <div class="col-md-3 mb-3">
                             <label for="dob">Date of Birth</label>
-                            <input type="date" class="form-control" id="dob" name="dob" required>
+                            <input type="date" class="form-control" style="background-color: #558e55" id="dob" name="dob" required>
                         </div>
 
                         <!-- Address Line 1 -->
                         <div class="col-md-3 mb-3">
                             <label for="addressLine1">Address Line 1</label>
-                            <input type="text" class="form-control" id="addressLine1" name="addressLine1" placeholder="Address Line 1" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="addressLine1" name="addressLine1"  required>
                         </div>
                     </div>
 
@@ -182,25 +170,25 @@
                         <!-- Address Line 2 -->
                         <div class="col-md-3 mb-3">
                             <label for="addressLine2">Address Line 2</label>
-                            <input type="text" class="form-control" id="addressLine2" name="addressLine2" placeholder="Address Line 2" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="addressLine2" name="addressLine2"  required>
                         </div>
 
                         <!-- Address Line 3 -->
                         <div class="col-md-3 mb-3">
                             <label for="addressLine3">Address Line 3</label>
-                            <input type="text" class="form-control" id="addressLine3" name="addressLine3" placeholder="Address Line 3" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="addressLine3" name="addressLine3"  required>
                         </div>
 
                         <!-- Address Line 4 -->
                         <div class="col-md-3 mb-3">
                             <label for="addressLine4">Address Line 4</label>
-                            <input type="text" class="form-control" id="addressLine4" name="addressLine4" placeholder="Address Line 4" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="addressLine4" name="addressLine4" required>
                         </div>
 
                         <!-- Address Line 5 -->
                         <div class="col-md-3 mb-3">
                             <label for="addressLine5">Address Line 5</label>
-                            <input type="text" class="form-control" id="addressLine5" name="addressLine5" placeholder="Address Line 5" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="addressLine5" name="addressLine5" required>
                         </div>
                     </div>
                 </div>
@@ -210,19 +198,19 @@
                         <!-- Contact No -->
                         <div class="col-md-3 mb-3">
                             <label for="contactNo">Contact No</label>
-                            <input type="text" class="form-control" id="contactNo" name="contactNo" required>
+                            <input type="text" class="form-control" style="background-color: #558e55" id="contactNo" name="contactNo" required>
                         </div>
 
                         <!-- Email -->
                         <div class="col-md-3 mb-3">
                             <label for="email1">Email</label>
-                            <input type="email" class="form-control" id="email1" name="email" required>
+                            <input type="email" class="form-control" style="background-color: #558e55" id="email1" name="email" required>
                         </div>
 
                         <!-- Field Code -->
                         <div class="col-md-3 mb-3">
                             <label for="fieldCode1">Field Code</label>
-                            <select class="form-control" id="fieldCode1" name="fieldCode">
+                            <select class="form-control" id="fieldCode1" style="background-color: #558e55" name="fieldCode">
                                 <option value="">Select Field Code</option>
                             </select>
                         </div>
@@ -230,7 +218,7 @@
                         <!-- V Code -->
                         <div class="col-md-3 mb-3">
                             <label for="vCode">Vehicle Code</label>
-                            <select class="form-control" id="vCode" name="vcode">
+                            <select class="form-control" style="background-color: #558e55" id="vCode" name="vcode">
                                 <option value="">Select Vehicle Code</option>
                             </select>
                         </div>
@@ -239,14 +227,14 @@
                     <div class="row">
                         <div class="col-md-2 mb-3">
                             <label for="members">Members</label>
-                            <input type="number" class="form-control" id="members" name="members">
+                            <input type="number" class="form-control" style="background-color: #558e55" id="members" name="members">
                         </div>
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-dark" id="savestaffbtn">SAVE</button>
-                <button type="button" class="btn btn-dark" id="updatestaffbtn">UPDATE</button>
-                <button type="button" class="btn btn-dark" id="deletestaffbtn">DELETE</button>
+                <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="savestaffbtn">SAVE</button>
+                <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="updatestaffbtn">UPDATE</button>
+                <button type="button" class="btn btn-dark" style="background-color: #5d755d" id="deletestaffbtn">DELETE</button>
             </form>
 
             <!-- Display Table -->

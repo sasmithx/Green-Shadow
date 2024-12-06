@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.util.UUID;
 
 @Service
-public class FileUploader {
+public class ImageHandle {
     @Value("${field.images.directory}")
     private String uploadDir;
 
